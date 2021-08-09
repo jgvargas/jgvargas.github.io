@@ -1,0 +1,350 @@
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+*/
+:root {
+    --primary-nav-color: #eaedef;
+
+    --primary-body-color: rgb(241, 238, 238);
+    --secondary-body-color: #003496;
+    
+    --primary-text-color: rgb(0, 42, 58);
+    --secondary-text-color: #606060;
+    
+    --nav-text-color: #502c1e;
+    --btn-primary-color: #db0032;
+    --btn-secondary-color: #002a3a;
+    --btn-hover-color: #3cb4e5;
+}
+
+* {
+    /* Allows padding/borders without adding to the width of an element*/
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #fff ;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15em;
+    line-height: 1.6;
+    min-height: 100%;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+a:link { text-decoration: none;}
+a:hover { color: rgb(192, 192, 192);}
+
+h1,h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+    overflow: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.card {
+    background: var(--secondary-body-color);
+    padding: 10px 25px;
+    border-radius: 20px;
+    width: 300px;
+    color: white;
+}
+
+.main {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+}
+
+.navbar {
+    background: var(--primary-nav-color);
+    color: var(--nav-text-color);
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+    color: var(--nav-text-color);
+}
+
+.navbar a {
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.flex-strip {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.support-banner {
+    box-sizing: border-box;
+    height: 600px;
+    min-width: 100%;
+    background-image: url(../img/two-dogs.bmp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 100px 50px;
+}
+.support-banner h2 {
+    margin: 0;
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    font-size: 62px;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+.support-banner p {
+    margin: 20px 0;
+    color: var(--secondary-text-color);
+    text-align: left;
+    height: 50px;
+    font-size: 1.7em;
+    word-wrap: break-word;
+    word-break: break-word;
+    height: 150px;
+    width: 450px;
+}
+
+/* .strip used for full width .showcase*/
+.showcase-strip {
+    padding: 3%;
+    width: 100%;
+}
+
+.primary-strip {
+    background-color:var(--primary-nav-color);
+}
+
+.secondary-strip {
+    background-color: transparent;  
+}
+
+.showcase-strip h1 {
+    color: var(--btn-secondary-color);
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+.showcase-strip p {
+    color: var(--secondary-text-color);
+    font-size: 1.5em;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.strip-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.strip-img-volunteer {
+    height: 300px;
+    width: 500px;
+    background-image: url(../img/volunteer.bmp);
+}
+
+.strip-img-puppy {
+    background-image: url(../img/puppy-smile.bmp);
+    height: 300px;
+    width: 450px;
+    border-radius: 400px;
+}
+
+.strip-text-box {
+    word-wrap: break-word;
+    width: 100px;
+}
+
+.img-box {
+    background: radial-gradient(purple, black);
+    z-index: 500;
+}
+
+/*---------------*/
+
+.site-body {
+    grid-row: 2 /3;
+    grid-column: 1/3;
+
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 4;
+}
+
+.site-title {
+    justify-content: center;
+}
+
+.pet-space {
+    background-color: transparent;
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    height: 1200px;
+    
+}
+
+.pet-box {
+    display: flex;
+    flex-direction: column;
+    background-color: teal;
+    margin: 20px;
+    align-items: center;
+}
+
+.pet-info {
+    background-color: blueviolet;
+}
+
+.pet-img {
+    width: 250px;
+}
+
+/*---------------------------------------------
+    Sidebar
+----------*/
+
+.sidebar {
+    grid-column: 1/ 2;
+    grid-row: 2 /3;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 0.5;
+
+    background-color: pink;
+    font-size: 1em;
+    padding: 10px 25px;
+    margin: 0 30px;
+}
+
+.sidebar-heading {
+    padding: 1px;
+}
+
+.sidebar-item {
+    cursor: pointer;
+    min-width: 30px;
+}
+
+/*---------------------------------------------
+    Footer
+---------------------------------------------*/
+.footer {
+    grid-column: 1 /3;
+    grid-row: 3/4;
+
+    display: flex;
+    flex-direction: column;
+
+    
+    
+}
+
+.footer-donate {
+    height: 300px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--secondary-body-color);
+    color: white;
+}
+
+.footer-media {
+    display: flex;
+    justify-content: space-around;
+    background: var(--primary-nav-color);
+    color:grey;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.company-logo {
+    padding: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+
+.media-tray {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.media-tray-items {
+    margin: 0 10px;
+    color:var(--secondary-text-color);
+}
+
+/*********** Utility *************/
+.btn {
+    padding: 10px 15px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    -webkit-border-radius: 6px;
+}
+
+.primary-btn {
+    background-color: var(--btn-secondary-color);
+}
+.secondary-btn {
+    background-color: var(--btn-primary-color);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.logo-heart {
+    color: var(--btn-primary-color);
+}
+
+.padded {
+    margin: 20px 20px;
+}

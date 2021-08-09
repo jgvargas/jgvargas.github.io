@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: forestgreen;
+    font-family: sans-serif;
+    min-height: 100%;
+}
+ul {
+    list-style-type: none;
+}
+
+.navbar {
+    background: blue;
+    height: 100px;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
