@@ -8,28 +8,47 @@
     <title>Jgvargasjr</title>
 </head>
 <body>
-    <div class="narbar">
-        <div class="container flex">
-            <div class="logo">
-                @Jgvargasjr
-            </div>
-            <ul>
-                <li>
-                    Home
+    <nav class="navbar">
+
+        <div class="navbar__container">
+            <!-- Logo -->
+            <a href="#" id="navbar__logo">@Jgvargasjr</a>
+
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div> 
+
+            <ul class="navbar__menu">
+                <li class="navbar___item">
+                    <a class="navbar__links" href="#">
+                        Home
+                    </a>
                 </li>
-                <li>
-                    <a href="./animal-index.html">
+                <li class="navbar___item">
+                    <a class="navbar__links" href="./animal-support.html">
                         Animal Project
                     </a>
                 </li>
-                <li>
-                    Contact
-                </li>
-                <li>
-                    Email
+                <li class="navbar__btn">
+                    <a class="button" href="#">
+                        Contact
+                    </a>
                 </li>
             </ul>
+
         </div>
+    </nav>
+
+    <div class="splash__page">
+        <h1>
+            Hey, I'm Juan Vargas but I like to go by John.
+        </h1>
+        <p>
+            Thanks for dropping by
+        </p>
     </div>
+    <script src="./app.js"></script>
 </body>
 </html>
