@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <title>Jgvargasjr</title>
 </head>
 <body>
@@ -25,15 +26,16 @@
 
             <ul class="navbar__menu">
                 <li class="navbar___item">
-                    <a class="navbar__links" href="#">
-                        About
-                    </a>
-                </li>
-                <li class="navbar___item">
-                    <a class="navbar__links" href="./src/animal-support.html">
+                    <a class="navbar__links" href="#projects">
                         Projects
                     </a>
                 </li>
+                <li class="navbar___item">
+                    <a class="navbar__links" href="#about">
+                        About
+                    </a>
+                </li>
+                
                 <li class="navbar__btn">
                     <a class="button" href="#">
                         Contact
@@ -58,15 +60,17 @@
     </section>
 
     <!-- Projects -->
-    <section class="showcase_strip">
+    <section class="showcase_strip" id="projects">
         <div class="container">
             <h1>
                 Here is a look at my recent work
             </h1>
             <p class="title_text">Github link included</p>
-            <h2>
-                KC Animal Adoption
-            </h2>
+            <p class="page_pretitle">
+                <a href="./src/animal-support.html">KC Animal Adoption</a>
+                <i class="fab fa-github"></i>
+            </p>
+            
             <p class="title_text">
                 A project were I showcase my ability to build Storefront page using hooks into https://dog.ceo/dog-api/ 
             </p>
@@ -74,7 +78,7 @@
     </section>
 
     <!--About Me -->
-    <section class="showcase_strip">
+    <section class="showcase_strip" id="about">
         <div class="container">
             <h1 class="page_title">
                 A few things about me

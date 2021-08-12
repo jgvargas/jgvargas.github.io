@@ -20,6 +20,10 @@ body {
     color: var(--primary-text-color);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a:link {
     text-decoration: none;
 }
