@@ -31,11 +31,22 @@ a:link {
 
 .container {
     width: 80%;
-    margin: 10px auto;
-    border: 1px solid magenta;
+    margin:200px auto;
 }
 
-.page_pretitle  a{
+.flex {
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.sub_container {
+    justify-content: space-between;
+    text-align: justify;
+}
+
+.page_pretitle a{
     text-transform: uppercase;
     color: #ff5277;
     font-weight: 700;
@@ -56,13 +67,13 @@ a:link {
     background-image: url(./img/my_picture.jpg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right;
+    background-position: center;
     height: 600px;
+    width: 1064px;
     border-radius: 2em;
 }
 
 .my-picture h1,h2 {
-    margin: 1em 4em;
     text-align:justify;
 }
 
