@@ -4,38 +4,70 @@
     --primary-body-color: #eaedef;
     --secondary-body-color: ;
     
-    --primary-text-color: rgb(0, 42, 58);
-    --secondary-text-color: #606060;
-    
-    --nav-text-color: #eaedef;
-    --btn-primary-color: #db0032;
-    --btn-secondary-color: #002a3a;
-    --btn-hover-color: #3cb4e5;
+    --primary-text-color: #fff;
+    --secondary-text-color: #818a91
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
 }
 
 body {
-    background: var(--primary-body-color);
+    background: linear-gradient(#0e141b, #252526);
+    font-family: sans-serif;
+    color: var(--primary-text-color);
 }
 
-.splash__page {
-    
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
+a:link {
+    text-decoration: none;
 }
 
+.showcase_strip {
+    align-items: left;
+    justify-content: left;
+}
+
+.container {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid magenta;
+}
+
+.page_pretitle  a{
+    text-transform: uppercase;
+    color: #ff5277;
+    font-weight: 700;
+}
+
+.page_title {
+    margin: 1rem 0;
+    font-size: 4.5rem;
+}
+
+.title_text {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.my-picture {
+    background-image: url(./img/my_picture.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height: 600px;
+    border-radius: 2em;
+}
+
+.my-picture h1,h2 {
+    margin: 1em 4em;
+    text-align:justify;
+}
 
 .navbar {
-    background: var(--primary-nav-color);
+    background:#0e141b;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -49,12 +81,12 @@ body {
 .navbar__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 80px;
     z-index: 1;
-    width: 100%;
+    width: 80%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 50px;
 }
 
 #navbar__logo {
@@ -65,7 +97,7 @@ body {
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .fa-gem {
@@ -92,6 +124,8 @@ body {
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .navbar__links:hover {
