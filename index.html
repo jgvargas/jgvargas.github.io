@@ -54,62 +54,99 @@
         </div>
     </nav>
 
-    <!-- Opening -->
-    <section class="showcase_strip">
-        <div class="container">
-            <p class="page_pretitle">
-                <a href="#about">Hello, my name is Juan</a>
-            </p>
-            <h1 class="page_title">I have fun making websites.</h1>
-            <p class="title_text">
-                I'm a aspiring frontend developer and allumni of the University of Texas RGV computer science program.
-            </p>
-            <!-- Sticky Note -->
-            <div class="sticky-container">
-                <i class="pin"></i>
-                <blockquote class="note yellow">
-                    This site is also under construction, pardon the dust.
-                </blockquote>
+    <div class="container">
+
+        <!-- Opening -->
+        <section class="columns">
+            <div class="col">
+                <p class="page_pretitle">
+                    <a href="#about">Hello, my name is Juan</a>
+                </p>
+                <h1 class="page_title">I have fun making websites.</h1>
+                <p class="title_text">
+                    I'm a aspiring frontend developer and allumni of the University of Texas RGV computer science program.
+                </p>
+                <!-- Sticky Note -->
+                <div class="sticky-container">
+                    <i class="pin"></i>
+                    <blockquote class="note yellow">
+                        This site is a work is progress, pardon the dust.
+                    </blockquote>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects -->
-    <section class="showcase_strip" id="projects">
-        <div class="container">
-            <h1 class="page_title">
-                My recent work
-            </h1>
-            <p class="title_text">Github link included</p>
-            <p class="page_pretitle">
-                <a href="./src/animal-support.html">KC Animal Adoption</a>
-                <i class="fab fa-github"></i>
-            </p>
+        <!-- Projects -->
+        <section class="columns" id="projects">
+            <div class="col">
+                <h1 class="page_title">
+                    My recent work
+                </h1>
+                <p class="title_text">Here are some things I am working on! </p>
+
+                <div class="sub-columns">
+                    <p class="page_pretitle">
+                        <a href="./src/animal-support.html">KC Animal Adoption</a>
+                        <i class="fab fa-github fa-lg"></i>
+                    </p>
+                    
+                    <p class="title_text">
+                        A project were I showcase my ability to build Storefront page using hooks 
+                        into https://dog.ceo/dog-api/ 
+                    </p>
+                </div>
+
+                <div class="sub-columns">
+                    <p class="page_pretitle">
+                        <a href="./index.html">My Portfolio page</a>
+                        
+                        <i class="fab fa-github fa-lg"></i>
+                    </p>
+                    
+                    <p class="title_text">
+                        This page you are visiting was created before my first project and 
+                        helped me gain a lot more perspective into my layout design. So much 
+                        so that I ended up doing some refactoring of my original project 
+                        since things started making more sense.
+                    </p>
+                </div>
+
+                
+
+            </div>
             
-            <p class="title_text">
-                A project were I showcase my ability to build Storefront page using hooks into https://dog.ceo/dog-api/ 
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <!--About Me -->
-    <section class="showcase_strip" id="about">
-        <div class="container">
-            <h1 class="page_title">
-                A few things about me
-            </h1>
-            <p class="title_text">
+        <!--About Me
+        
+
+        -->
+        <section class="columns" id="about">
+            <div class="col col-2">
+
+                <h1 class="page_title">
+                    A few things about me
+                </h1>
+            
+                <p class="title_text">
                 I am a resident of Kansas City, Missouri and currently starting 
-                my move back to Texas. I was born and raised in Texas and 
-                excited to go back home. I love all kinds of music and have been 
+                my move back to Texas. 
+                <br><br>
+                Here in Kansas City I worked at a Healthcare 
+                software company called Cerner, where I worked as a System Engineer 
+                for 3 years on their federal projects.
+                <br><br>
+                I like to consider myself as a creative type and Web develpment was
+                 that bridge between my programming knowledge and creativity. love all kinds of music and have been 
                 playing guitar for over a decade.
-            </p>
-            <div class="my-picture">
-            </div> 
-        </div>
-    </section>
+                </p>
+            </div>
+            
+            <img src="./img/my_picture.jpg" alt="me" class="col my-picture">
+        </section>
+    </div>
 
-    <footer class="showcase_strip">
+    <footer>
         Hello
     </footer>
     <script src="./app.js"></script>
