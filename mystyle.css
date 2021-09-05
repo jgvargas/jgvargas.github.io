@@ -54,15 +54,16 @@ a:link {
     height: 100vh;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 .sub-columns {
-    border: 4px dotted steelblue;
 }
 
 .col {
-    border: 1px solid yellow;
+}
+
+.col-flex {
+    display: flex;
 }
 
 .col-1 {
@@ -75,6 +76,7 @@ a:link {
 
 .my-picture {
     max-height: 600px;
+    justify-content: center;
 }
 
 .project-icon {
@@ -84,6 +86,7 @@ a:link {
 .page_title {
     margin: 1rem 0;
     font-size: 4.5rem;
+    padding: 20px;
 }
 
 .page_pretitle a{
@@ -102,6 +105,7 @@ a:link {
     font-weight: 300;
     color: var(--secondary-text-color);
     text-align: justify;
+    padding: 20px;
 }
 
 .navbar {
@@ -148,7 +152,6 @@ a:link {
 
 .navbar__item {
     height: 80px;
-
 }
 
 .navbar__links {
