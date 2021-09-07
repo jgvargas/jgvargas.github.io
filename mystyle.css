@@ -60,9 +60,10 @@ a:link {
 }
 
 .col {
+    
 }
 
-.col-flex {
+.about-section {
     display: flex;
 }
 
@@ -86,7 +87,6 @@ a:link {
 .page_title {
     margin: 1rem 0;
     font-size: 4.5rem;
-    padding: 20px;
 }
 
 .page_pretitle a{
@@ -105,7 +105,6 @@ a:link {
     font-weight: 300;
     color: var(--secondary-text-color);
     text-align: justify;
-    padding: 20px;
 }
 
 .navbar {
@@ -179,6 +178,11 @@ a:link {
     width: 100%;
 }
 
+footer p {
+    color: grey;
+    text-align: center;
+}
+
 .button {
     display: flex;
     justify-content: center;
@@ -241,7 +245,7 @@ a:link {
     }
 
     #navbar__logo {
-        padding-left: 25px;
+        padding-left: 50px;
     }
 
     .navbar__toggle .bar {
@@ -298,6 +302,25 @@ a:link {
     }
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page_title {
+        font-size: 4rem;
+    }
+    
+    .page_pretitle a{
+        font-size: 1rem;
+    }
+    .title_text {
+        font-size: 1.5rem;
+    }
+    .my-picture {
+        max-width: 100%;
     }
 }
 
