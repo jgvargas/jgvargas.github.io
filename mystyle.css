@@ -180,7 +180,7 @@ section {
     font-size: 2rem;
     font-weight: 300;
     color: var(--secondary-text-color);
-    text-align: justify;
+    text-align: left;
 }
 
 /*
@@ -352,5 +352,10 @@ Mobile
     }
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .level-2 {
+        display: flex;
+        flex-direction: column;
     }
 }
