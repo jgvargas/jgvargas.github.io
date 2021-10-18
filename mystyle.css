@@ -173,7 +173,7 @@ section {
 
 .page-title {
     margin: .5rem 0;
-    font-size: 4.5rem;
+    font-size: 4rem;
 }
 
 .section-text {
@@ -357,5 +357,25 @@ Mobile
     .level-2 {
         display: flex;
         flex-direction: column;
+    }
+
+    .page-pretitle {
+        font-size: 1rem;
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+    
+    .section-text {
+        font-size: 1rem;
+    }
+
+    .project-header {
+        font-size: 2rem;
+    }
+
+    .project-details {
+        font-size: 1rem;
     }
 }
