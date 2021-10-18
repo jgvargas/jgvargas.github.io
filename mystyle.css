@@ -378,4 +378,12 @@ Mobile
     .project-details {
         font-size: 1rem;
     }
+
+    .about-img {
+        height: 300px;
+    }
+
+    section {
+        margin: 0 auto 20rem auto;
+    }
 }
