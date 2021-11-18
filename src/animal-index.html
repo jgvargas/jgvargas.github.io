@@ -1,91 +1,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>John's Portfolio Page</title>
+    <title>Animal Adoption Center</title>
     <!-- viewport is used to ensure views are working with mobile and desktop view-->
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="mycss.css">
+    <link rel="stylesheet" href="animal.css">
 </head>
 <body>
-    <div class="main">
-
-        <!-- Navbar -->
-        <div class="navbar">
-            <div class="container flex">
-                <a href="../index.html">
-                    <h1 class="nav-logo" style="font-size: 1.15em;">
-                        KC Animal <i class="fas fa-heart logo-heart"></i>
-                        <br>
-                        Adoption Center
-                    </h1>
-                </a>
-
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="#0">Adopt</a>
-                        </li>
-                        <li>
-                            <a href="./animal-support.html">Support</a>
-                        </li>
-                        <li>
-                            <a href="#0">Events</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container flex">
+                <h1 class="nav-logo" style="font-size: 1.15em;">
+                    KC Animal <i class="fas fa-heart logo-heart"></i>
+                    <br>
+                    Adoption Center
+                </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#0">Adopt</a>
+                    </li>
+                    <li>
+                        <a href="./animal-support.html">Support</a>
+                    </li>
+                    <li>
+                        <a href="#0">Events</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </nav>
 
-        <!-- Site body -->
-        <div class="site-body">
-
+    <div class="main flex-col">    
+        <!-- Site banner -->
+        <div class="banner">
             <h1 class="site-title">Find your best friend with us!</h1>
+        </div>
+        <!-- Site body -->
+        <div class="page-content flex-row">
 
-            <div class="pet-space">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3 class="sidebar-header">
+                    All Breeds
+                </h3>
+                <ul class="pet-selection">
                     
-                <div class="pet-box">
-                    <img class="pet-img" src="../img/dog-howdy.jpg" alt="dog-howdy">
-                    <div class="pet-info">About me</div>
+                </ul>
+            </div>
+
+            <!-- Site body -->
+            <div class="site-body">
+                <div class="pet-space">
+                        
+                    <div class="pet-box">
+                        <img class="pet-img" alt="dog-howdy">
+                        <div class="pet-info">About me</div>
+                    </div>
+    
+                    <div class="pet-box">
+                        <img class="pet-img"alt="dog-craze">
+                        <div class="pet-info">About me</div>
+    
+                    </div>
+                    
                 </div>
-
-                <div class="pet-box">
-                    <img class="pet-img" src="../img/cat-howdy.jpg" alt="cat-howdy">
-                    <div class="pet-info">About me</div>
-
-                </div>
-
-                <div class="pet-box">
-                    <img class="pet-img" src="../img/dog-craze.png" alt="dog-craze">
-                    <div class="pet-info">About me</div>
-
-                </div>
-            
-            
-                <div class="pet-box">
-                    <img class="pet-img" src="../img/dog-face.jpg" alt="dog-face">
-                    <div class="pet-info">About me</div>
-
-                </div>
-
-                <div class="pet-box">
-                    <img class="pet-img" src="../img/cat-eyes.jpg" alt="cat-eyes">
-                    <div class="pet-info">About me</div>
-
-                </div>
-                
             </div>
         </div>
+        
 
-        <!-- Footer -->
+        <!-- Footer
         <div class="footer">
 
-            <!-- .footer donate-->
+            
             <div class="footer-donate">
                 <h2>
                     Your support means the world to our organization and our pets.
@@ -96,9 +88,11 @@
                 </button>
             </div>
         </div>
+        -->
+        
 
 
     </div>
-    <script src="./home.js"></script>
+    <script src="./animal.js"></script>
 </body>
 </html>
