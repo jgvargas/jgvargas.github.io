@@ -1,5 +1,9 @@
 /*
-https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+    TODO:
+    - Refactor css properties
+        - set global container
+        - petSpace grid not collapsing
+    - Adopt page banner
 */
 :root {
     --primary-nav-color: #eaedef;
@@ -93,6 +97,11 @@ ul {
 
 .navbar .flex {
     justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: 1em;
+    cursor: pointer;
 }
 
 /*
@@ -221,7 +230,8 @@ ul {
 }
 
 .site-title {
-    justify-content: center;
+    color: var(--secondary-body-color);
+    font-weight: 600;
 }
 
 .pet-space {
@@ -234,18 +244,22 @@ ul {
 }
 
 .pet-box {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    background-color: teal;
-    margin: 20px;
+    background-color: var(--primary-nav-color);
+    margin: 1rem;
     align-items: center;
 }
 
 .pet-info {
-    background-color: blueviolet;
+    color: #003496;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
 }
 
 .pet-img {
+    cursor: pointer;
     margin: 1rem;
     width: 250px;
     height: 250px;
@@ -256,6 +270,7 @@ ul {
 ----------*/
 
 .sidebar {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -273,7 +288,8 @@ ul {
 
 .sidebar-li {
     cursor: pointer;
-    margin: .3rem 0 0 .5rem;
+    margin: .5rem 0 0 .5rem;
+    text-transform: capitalize;
 }
 
 .sidebar-li:hover {
@@ -316,11 +332,6 @@ ul {
 .footer p {
     text-align: center;
     font-size: 0.9em;
-}
-
-.nav-logo {
-    font-size: 1em;
-    cursor: pointer;
 }
 
 .media-tray {

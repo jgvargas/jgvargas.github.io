@@ -1,11 +1,19 @@
+/*
+    TODO: 
+    - Implement "Search by breed"
+    - Random images on page load
+    - Loading animation while waiting for API
+    - Change "About me" html layout
+*/
+
+
 const imageRandom = document.querySelector(".pet-img");
 const petSpace = document.querySelector(".pet-space")
 const sideBarList = document.querySelector(".pet-selection")
 
 const randomImageApiUrl = "https://dog.ceo/api/breeds/image/random";
-let randImageSrc = '';
 
-// Change imgs based off user input 
+// Dynamic selection 
 function getDogBreedImages( breedName) {
     let dogImagesUrl = `https://dog.ceo/api/breed/${breedName}/images`;
     fetch(dogImagesUrl)
@@ -14,14 +22,14 @@ function getDogBreedImages( breedName) {
     })
     .then( (json) => {
         console.log(json)
-        showInHtml(json);
+        showInHtml(json, breedName);
     })
     .catch( (error) => {
         console.log(error);
     });
 }
 
-function showInHtml(json) {
+function showInHtml(json, breedName) {
     let imageList = json.message;
 
     petSpace.innerHTML ="";
@@ -30,7 +38,7 @@ function showInHtml(json) {
         petSpace.innerHTML += 
         `<div class="pet-box">
             <img src="${image}" class="pet-img" alt="friendly-dog">
-            <div class="pet-info">About me: </div>
+            <div class="pet-info">About me: ${breedName}</div>
         </div>`;
     })
 }
