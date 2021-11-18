@@ -2,12 +2,10 @@ const imageRandom = document.querySelector(".pet-img");
 const petSpace = document.querySelector(".pet-space")
 const sideBarList = document.querySelector(".pet-selection")
 
-const imgGrid = document.querySelector(".site-body");
-
 const randomImageApiUrl = "https://dog.ceo/api/breeds/image/random";
 let randImageSrc = '';
 
-
+// Change imgs based off user input 
 function getDogBreedImages( breedName) {
     let dogImagesUrl = `https://dog.ceo/api/breed/${breedName}/images`;
     fetch(dogImagesUrl)
@@ -26,8 +24,24 @@ function getDogBreedImages( breedName) {
 function showInHtml(json) {
     let imageList = json.message;
 
-    imgGrid.innerHTML;
+    petSpace.innerHTML ="";
+
+    imageList.forEach( image => {
+        petSpace.innerHTML += 
+        `<div class="pet-box">
+            <img src="${image}" class="pet-img" alt="friendly-dog">
+            <div class="pet-info">About me: </div>
+        </div>`;
+    })
 }
+
+sideBarList.addEventListener('click', event => {
+    if(event.target && event.target.nodeName == "LI") {
+        console.log("Clicked on a specific!")
+        getDogBreedImages(event.target.innerHTML.trim());
+    }
+})
+
 
 function createDogBreedList() {
     const allBreedsApiUrl = "https://dog.ceo/api/breeds/list/all";
@@ -78,7 +92,7 @@ function getRandomImage() {
 }
 
 function createPetSpace (numOfPets) {
-    imgGrid.innerHTML = '';
+    petSpace.innerHTML = '';
 
     for( let i = 0; i < numOfPets; i++) {
         let petSpaceHTML = 
@@ -86,7 +100,7 @@ function createPetSpace (numOfPets) {
             <img class="pet-img" alt="friendly-dog">
             <div class="pet-info">About me: </div>
         </div>`;
-        imgGrid.innerHTML += petSpaceHTML;
+        petSpace.innerHTML += petSpaceHTML;
     }
 }
 
@@ -95,7 +109,7 @@ function renderAdoptPage() {
     createDogBreedList();
 
     // Create pet-space
-    createPetSpace(10);
+    createPetSpace(30);
 }
 
 renderAdoptPage();
