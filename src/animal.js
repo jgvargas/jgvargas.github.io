@@ -13,7 +13,7 @@ const sideBarList = document.querySelector(".pet-selection")
 
 const randomImageApiUrl = "https://dog.ceo/api/breeds/image/random";
 
-// Dynamic selection 
+// Dynamic html selection 
 function getDogBreedImages( breedName) {
     let dogImagesUrl = `https://dog.ceo/api/breed/${breedName}/images`;
     fetch(dogImagesUrl)
@@ -21,23 +21,22 @@ function getDogBreedImages( breedName) {
         return response.json();
     })
     .then( (json) => {
-        console.log(json)
-        showInHtml(json, breedName);
+        createSpecificBreedHtml(json, breedName);
     })
     .catch( (error) => {
         console.log(error);
     });
 }
 
-function showInHtml(json, breedName) {
+function createSpecificBreedHtml(json, breedName) {
     let imageList = json.message;
 
     petSpace.innerHTML ="";
 
-    imageList.forEach( image => {
+    imageList.forEach( imageSrc => {
         petSpace.innerHTML += 
         `<div class="pet-box">
-            <img src="${image}" class="pet-img" alt="friendly-dog">
+            <img src="${imageSrc}" class="pet-img" alt="friendly-dog">
             <div class="pet-info">About me: ${breedName}</div>
         </div>`;
     })
@@ -45,12 +44,13 @@ function showInHtml(json, breedName) {
 
 sideBarList.addEventListener('click', event => {
     if(event.target && event.target.nodeName == "LI") {
-        console.log("Clicked on a specific!")
+        // Refresh images
         getDogBreedImages(event.target.innerHTML.trim());
     }
 })
+// END OF DYNAMIC SECTION
 
-
+// Side bar breed list
 function createDogBreedList() {
     const allBreedsApiUrl = "https://dog.ceo/api/breeds/list/all";
 
@@ -59,8 +59,6 @@ function createDogBreedList() {
         return response.json();
     })
     .then( (json) => {
-        // console.log(json);
-
         let allBreeds = json.message;
         let breedList = Object.keys(allBreeds);
 
@@ -76,48 +74,46 @@ function createDogBreedList() {
     });
 }
 
-function getRandomImage() {
+// INIT page settings
+function createRandomImage(numOfPets) {
     return fetch(randomImageApiUrl)
         .then( (response) => {
             return response.json();
         })
         .then( (json) => {
-            return json.message;
+            createPetSpace(json, numOfPets);
         })
         .catch( (error) => {
             console.log(error);
         });
-
-        /*
-    try {
-        const response = await fetch(randomImageApiUrl);
-        const json = await response.json();
-        return json.message;
-    } catch (error) {
-        console.log(error);
-    }
-    */
 }
 
-function createPetSpace (numOfPets) {
+function createPetSpace (json, numOfPets) {
     petSpace.innerHTML = '';
+    let randImg = json.message;
 
     for( let i = 0; i < numOfPets; i++) {
         let petSpaceHTML = 
         `<div class="pet-box">
-            <img class="pet-img" alt="friendly-dog">
+            <img src="${randImg}" class="pet-img" alt="friendly-dog">
             <div class="pet-info">About me: </div>
         </div>`;
         petSpace.innerHTML += petSpaceHTML;
     }
 }
 
+
 function renderAdoptPage() {
     // Gets breeds then creates sidebar
     createDogBreedList();
 
     // Create pet-space
-    createPetSpace(30);
+    createRandomImage(30);
+    
+    let imgArray = new Array(30);
+    Promise.all( imgArray.map( () => {
+
+    }))
 }
 
 renderAdoptPage();
