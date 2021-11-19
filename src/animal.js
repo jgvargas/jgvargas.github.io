@@ -75,45 +75,68 @@ function createDogBreedList() {
 }
 
 // INIT page settings
-function createRandomImage(numOfPets) {
+function createRandomPet() {
     return fetch(randomImageApiUrl)
         .then( (response) => {
             return response.json();
         })
         .then( (json) => {
-            createPetSpace(json, numOfPets);
+            createPetSpace(json);
         })
         .catch( (error) => {
             console.log(error);
         });
 }
 
-function createPetSpace (json, numOfPets) {
-    petSpace.innerHTML = '';
-    let randImg = json.message;
-
-    for( let i = 0; i < numOfPets; i++) {
-        let petSpaceHTML = 
-        `<div class="pet-box">
-            <img src="${randImg}" class="pet-img" alt="friendly-dog">
-            <div class="pet-info">About me: </div>
-        </div>`;
-        petSpace.innerHTML += petSpaceHTML;
-    }
+function createAge() {
+    let years = Math.round( Math.random() * 12);
+    let ageStatement = years + " years"; 
+    return ageStatement;
 }
 
+function getName() {
+    return "Bob"
+}
+
+function createPetSpace (json) {
+    let randImg = json.message;
+    let name = getName();
+    let gender = Math.round (Math.random() );
+    let age = createAge();
+
+    petSpace.innerHTML += 
+    `<div class="pet-box">
+        <img src="${randImg}" class="pet-img" alt="friendly-dog">
+        <div class="pet-info"><h3>${name}</h3>
+        <p>${ gender ? "Female" : "Male" } | ${age}</p> 
+        </div>
+    </div>`;
+}
 
 function renderAdoptPage() {
     // Gets breeds then creates sidebar
     createDogBreedList();
 
     // Create pet-space
-    createRandomImage(30);
-    
-    let imgArray = new Array(30);
-    Promise.all( imgArray.map( () => {
+    petSpace.innerHTML = '';
 
-    }))
+    for(let i =0; i< 30; i++) {
+        createRandomPet();
+    }
+    
+
+    // Promise.all( imgArray.map( () => {
+    //     fetch(randomImageApiUrl)
+    //     .then( json => {
+    //         createPetSpace(json.message)
+    //     })
+
+    //     petSpace.innerHTML += petSpaceHTML;
+
+    //     console.log("Finished after fetch")
+    // }))
+
+    
 }
 
 renderAdoptPage();

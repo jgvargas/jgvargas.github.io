@@ -7,7 +7,6 @@
 */
 :root {
     --primary-nav-color: #eaedef;
-
     --primary-body-color: rgb(241, 238, 238);
     --secondary-body-color: #003496;
     
@@ -18,10 +17,11 @@
     --btn-primary-color: #db0032;
     --btn-secondary-color: #002a3a;
     --btn-hover-color: #3cb4e5;
+
+    --color-pink-10: rgb(255, 195, 205);
 }
 
 * {
-    /* Allows padding/borders without adding to the width of an element*/
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -35,20 +35,12 @@ body {
     min-height: 100%;
 }
 
-
 a {
     text-decoration: none;
     color: var(--nav-text-color);
 }
 a:link { text-decoration: none;}
 a:hover { color: rgb(192, 192, 192);}
-
-h1,h2 {
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 10px 0;
-    overflow: auto;
-}
 
 ul {
     list-style-type: none;
@@ -57,26 +49,12 @@ ul {
 .container {
     max-width: 1300px;
     margin: 0 auto;
-    overflow: auto;
-    padding: 0 40px;
-}
-
-.card {
-    background: var(--secondary-body-color);
-    padding: 10px 25px;
-    border-radius: 20px;
-    width: 300px;
-    color: white;
-}
-
-.main {
     width: 80%;
-    margin: 0 auto;
 }
 
-/*
+/* ------------------------
     NAVBAR
-*/
+------------------------*/
 
 
 .navbar {
@@ -85,34 +63,40 @@ ul {
     height: 70px;
 }
 
-.navbar ul {
+.nav-container {
+    align-items: center;
     display: flex;
-    color: var(--nav-text-color);
-}
-
-.navbar a {
-    padding: 10px;
-    margin: 0 5px;
-}
-
-.navbar .flex {
+    max-width: 1300px;
+    margin: 0 auto;
     justify-content: space-between;
+    width: 80%;
 }
 
 .nav-logo {
     font-size: 1em;
     cursor: pointer;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+    overflow: auto;
 }
 
-/*
-  END OF NAVBAR
-*/
+.nav-list {
+    display: flex;
+    color: var(--nav-text-color);
+}
+
+.nav-list a {
+    padding: 10px;
+    margin: 0 5px;
+}
+
+/*-----------------------
+    END OF NAVBAR
+------------------------*/
 
 .flex {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
 }
 
 .flex-col {
@@ -120,16 +104,18 @@ ul {
     flex-direction: column;
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.flex-strip {
+#user-signup {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+}
+
+.card {
+    background: var(--secondary-body-color);
+    padding: 10px 25px;
+    border-radius: 20px;
+    width: 300px;
+    color: white;
 }
 
 .support-banner {
@@ -218,28 +204,33 @@ ul {
     z-index: 500;
 }
 
-/*---------------*/
+/*-------------------------------
+    Adoption Page
+--------------------------------*/
 
-.site-body {
-    grid-row: 2 /3;
-    grid-column: 1/3;
-
-    text-align: center;
-    
-   
+.banner {
+    background: url("../img/dog-treats.jpg") no-repeat;
+    background-size: cover;
+    justify-content: center;
+    display: grid;
+    height: 250px;
 }
 
-.site-title {
+.banner-text {
+    background: #eaedef;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    opacity: 0.6;
+    padding: 0 8rem;
     color: var(--secondary-body-color);
     font-weight: 600;
 }
 
 .pet-space {
     background-color: transparent;
-    
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
     height: 600px;
 }
 
@@ -258,6 +249,10 @@ ul {
     padding: .5rem 1rem;
 }
 
+.pet-info h3 {
+    text-align: center;
+}
+
 .pet-img {
     cursor: pointer;
     margin: 1rem;
@@ -265,9 +260,16 @@ ul {
     height: 250px;
 }
 
-/*---------------------------------------------
+/*----------------------------------
     Sidebar
-----------*/
+----------------------------------*/
+
+.sidebar-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 80%;
+}
 
 .sidebar {
     border-radius: 10px;
@@ -275,7 +277,7 @@ ul {
     flex-direction: column;
     flex-wrap: wrap;
     flex-grow: 0.5;
-    background-color: pink;
+    background-color: var(--color-pink-10);
     font-size: 1em;
     padding: 10px 25px;
     margin: 1.5rem;
@@ -296,6 +298,10 @@ ul {
     color: #606060;
 }
 
+#sidebar-button {
+    display: none;
+}
+
 /*---------------------------------------------
     Footer
 ---------------------------------------------*/
@@ -305,11 +311,14 @@ ul {
     grid-row: 3/4;
     display: flex;
     flex-direction: column;
-    */
+    
+    
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;  
+    height: 2.5rem; 
+    */
+     
 }
 
 .footer-donate {
@@ -355,6 +364,7 @@ ul {
     cursor: pointer;
     font-size: 20px;
     font-weight: 500;
+    border-radius: 6px;
     -webkit-border-radius: 6px;
 }
 
@@ -376,4 +386,44 @@ ul {
 
 .padded {
     margin: 20px 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .nav-list {
+        display: none;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 3%;
+        right: 3%;
+    }
+
+    #mobile-menu span {
+        cursor: pointer;
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--nav-text-color);
+        margin: 5px auto;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    #sidebar-button {
+        display: block;
+        margin: 2rem 0;
+        width: 4rem;
+        font-size: 1.2rem;
+        color: var(--nav-text-color);
+        background-color: var(--color-pink-10);
+    }
+
+    .sidebar-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
 }
