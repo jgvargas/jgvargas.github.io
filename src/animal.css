@@ -280,7 +280,7 @@ ul {
     background-color: var(--color-pink-10);
     font-size: 1em;
     padding: 10px 25px;
-    margin: 1.5rem;
+    margin: 1.5rem 0;
     max-width: 200px;
 }
 
@@ -300,6 +300,10 @@ ul {
 
 #sidebar-button {
     display: none;
+}
+
+#sidebar-input {
+    width: 100%;
 }
 
 /*---------------------------------------------
@@ -388,7 +392,7 @@ ul {
     margin: 20px 20px;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 660px) {
     .nav-list {
         display: none;
     }

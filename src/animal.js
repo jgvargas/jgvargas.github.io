@@ -12,6 +12,12 @@ const petSpace = document.querySelector(".pet-space")
 const sideBarList = document.querySelector(".pet-selection")
 
 const randomImageApiUrl = "https://dog.ceo/api/breeds/image/random";
+const sidebarInput = document.getElementById("sidebar-input");
+
+// filter sidebar
+document.addEventListener('keyup', () => {
+    console.log('Key was pressed');
+})
 
 // Dynamic html selection 
 function getDogBreedImages( breedName) {
@@ -30,6 +36,9 @@ function getDogBreedImages( breedName) {
 
 function createSpecificBreedHtml(json, breedName) {
     let imageList = json.message;
+    let name = getName();
+    let gender = Math.round (Math.random() );
+    let age = createAge();
 
     petSpace.innerHTML ="";
 
@@ -37,7 +46,9 @@ function createSpecificBreedHtml(json, breedName) {
         petSpace.innerHTML += 
         `<div class="pet-box">
             <img src="${imageSrc}" class="pet-img" alt="friendly-dog">
-            <div class="pet-info">About me: ${breedName}</div>
+            <div class="pet-info"><h3>${name}</h3>
+            <p>${ gender ? "Female" : "Male" } | ${age}</p> 
+            </div>
         </div>`;
     })
 }
@@ -95,6 +106,9 @@ function createAge() {
 }
 
 function getName() {
+    let nameFile = new XMLHttpRequest();
+    nameFile.open("GET", "pet-names.txt", true);
+
     return "Bob"
 }
 
@@ -114,28 +128,23 @@ function createPetSpace (json) {
 }
 
 function renderAdoptPage() {
-    // Gets breeds then creates sidebar
+    // Gets breeds then populate sidebar
     createDogBreedList();
 
     // Create pet-space
     petSpace.innerHTML = '';
-
     for(let i =0; i< 30; i++) {
         createRandomPet();
     }
-    
 
     // Promise.all( imgArray.map( () => {
     //     fetch(randomImageApiUrl)
     //     .then( json => {
     //         createPetSpace(json.message)
     //     })
-
     //     petSpace.innerHTML += petSpaceHTML;
-
     //     console.log("Finished after fetch")
     // }))
-
     
 }
 
