@@ -231,7 +231,7 @@ ul {
     background-color: transparent;
     display: grid;
     grid-template-columns: auto auto auto;
-    height: 600px;
+    height: 100%;
 }
 
 .pet-box {
@@ -264,7 +264,7 @@ ul {
     Sidebar
 ----------------------------------*/
 
-.sidebar-container {
+.main-container {
     display: flex;
     max-width: 1300px;
     margin: 0 auto;
@@ -302,15 +302,25 @@ ul {
     display: none;
 }
 
+#sidebar-mobileview {
+    display: none;
+}
+
 #sidebar-input {
     width: 100%;
+    background-image: url(../img/search-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-position: 5px;
+    padding-left: 20px;
 }
 
 /*---------------------------------------------
     Footer
 ---------------------------------------------*/
+/*
 .footer {
-    /*
+    
     grid-column: 1 /3;
     grid-row: 3/4;
     display: flex;
@@ -321,9 +331,8 @@ ul {
     bottom: 0;
     width: 100%;
     height: 2.5rem; 
-    */
-     
 }
+*/
 
 .footer-donate {
     height: 300px;
@@ -392,7 +401,7 @@ ul {
     margin: 20px 20px;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 880px) {
     .nav-list {
         display: none;
     }
@@ -417,17 +426,48 @@ ul {
     }
 
     #sidebar-button {
-        display: block;
-        margin: 2rem 0;
-        width: 4rem;
-        font-size: 1.2rem;
-        color: var(--nav-text-color);
         background-color: var(--color-pink-10);
-    }
-
-    .sidebar-container {
-        flex-direction: column;
+        border: none;
+        border-radius: 4px;
+        color: var(--nav-text-color);
+        cursor: pointer;
+        display: flex;
         justify-content: center;
+        height: 100%;
+        margin: 2rem 1rem;
+        padding: .5rem 1.5rem;
+        width: 4rem;
+
+        font-size: 1.2rem;
     }
 
+    #sidebar-button:hover {
+        color: #606060;
+    }
+
+    #sidebar-button:focus {
+        animation-name: growMenu;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        cursor:default;
+    }
+
+    @keyframes growMenu {
+        from {
+            width: 4rem;
+            height: 2rem;
+        }
+        to {
+            width: 100%;
+            height: 20rem;
+        }
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    
 }

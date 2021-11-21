@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <h1 class="nav-logo" style="font-size: 1.15em;">
-                KC Animal <i class="fas fa-heart logo-heart"></i>
+                DFW Animal <i class="fas fa-heart logo-heart"></i>
                 <br>
                 Adoption Center
             </h1>
@@ -45,30 +45,38 @@
     </div>
 
     <!-- Site body -->
-    <div class="sidebar-container">    
+    <div class="main-container">    
 
         <!-- Sidebar -->
         <div class="sidebar">
             <h3 class="sidebar-header">
                 All Breeds
             </h3>
-            <input id="sidebar-input" type="text" placeholder="Search by breed">
+            <input id="sidebar-input" onkeyup="filterBreedList()" type="text" placeholder="Search by breed">
             <ul class="pet-selection">
                 
             </ul>
         </div>
         <!-- Sidebar mobile button -->
         <button id="sidebar-button">Filters</button>
+        <div id="sidebar-mobileview">
+            <h3 class="sidebar-header">
+            All Breeds
+            </h3>
+            <input id="sidebar-input" type="text" placeholder="Search by breed">
+            <ul class="pet-selection">
+            </ul>
+        </div>
 
         <!-- Adoption content -->
-        <div class="site-body">
-            <div class="pet-space">
-                <div class="pet-box">
-                    <img class="pet-img" alt="friendly-dog">
-                    <div class="pet-info">About me: </div>
-                </div>
+        
+        <div class="pet-space">
+            <div class="pet-box">
+                <img class="pet-img" alt="friendly-dog">
+                <div class="pet-info">About me: </div>
             </div>
         </div>
+        
     </div>
 
     <!-- Footer
