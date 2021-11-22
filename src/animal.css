@@ -284,8 +284,9 @@ ul {
     max-width: 200px;
 }
 
-.sidebar-heading {
+.sidebar-header {
     padding: 1px;
+    cursor: pointer;
 }
 
 .sidebar-li {
@@ -294,7 +295,8 @@ ul {
     text-transform: capitalize;
 }
 
-.sidebar-li:hover {
+.sidebar-li:hover,
+.sidebar-header:hover {
     color: #606060;
 }
 
