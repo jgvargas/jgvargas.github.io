@@ -2,24 +2,16 @@
     TODO: 
     - Mobile view
         - hamburger menu setup
-        - filter system
+        - filter button system
     - Loading animation while waiting for API
-    - Random name assignment
-        - Some assigned Undefined
+    - Random pet detail assignment
+        - Some names assigned Undefined
         - Age should not be 0
 */
 
-
-const imageRandom = document.querySelector(".pet-img");
 const petSpace = document.querySelector(".pet-space")
 const sideBarList = document.querySelector(".pet-selection")
-
 const randomImageApiUrl = "https://dog.ceo/api/breeds/image/random";
-const sidebarInput = document.getElementById("sidebar-input");
-
-let mainSectionSize = document.querySelector(".main-container");
-let sidebarSize = document.querySelector(".sidebar");
-
 
 // Dynamic html selection 
 function getDogBreedImages( breedName) {
@@ -40,7 +32,6 @@ function createSpecificBreedHtml(json, breedName) {
     let imageList = json.message;
     let name;
     
-
     petSpace.innerHTML ="";
 
     imageList.forEach( imageSrc => {
@@ -86,7 +77,6 @@ function filterBreedList() {
         }
     }
 }
-
 // END
 
 
@@ -114,22 +104,6 @@ function createDogBreedList() {
         console.log(error);
     });
 }
-
-// Resizing grid
-visualViewport.addEventListener('resize', () => {
-    
-    let sizeDif = mainSectionSize.offsetWidth - sideBarList.offsetWidth;
-    
-    if ( sizeDif > 990) {
-        document.querySelector(".pet-space").style["grid-template-columns"] = "auto auto auto";
-    }
-    else if ( sizeDif > 570 && sizeDif < 990) {
-        document.querySelector(".pet-space").style["grid-template-columns"] = "auto auto";
-    }
-    else if ( sizeDif < 570) {
-        document.querySelector(".pet-space").style["grid-template-columns"] = "auto";
-    }
-})
 
 // INIT page settings
 function createRandomPet() {
@@ -359,10 +333,10 @@ function getName(gender) {
     ];
 
     if(gender){
-        return male[ Math.floor( Math.random() * (male.length - 1 + 1) + 1) ]; 
+        return male[ Math.floor( Math.random() * (male.length) + 1) ]; 
     }
     else {
-        return female[ Math.floor( Math.random() * (male.length - 1 + 1) + 1) ]; 
+        return female[ Math.floor( Math.random() * (male.length) + 1) ]; 
     }
 }
 

@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Animal Adoption Center</title>
-    <!-- viewport is used to ensure views are working with mobile and desktop view-->
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniaml Adoption Center</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,62 +46,63 @@
         </div>
     </nav>
 
-    <!-- Site banner -->
-    <div class="banner--adopt">
-        <h1 class="banner-text">Find your best friend with us!</h1>
-    </div>
-
-    <!-- Site body -->
-    <div class="container flex">    
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <h3 class="sidebar-header"  onclick="renderAdoptPage()">
-                All Breeds
-            </h3>
-            <input id="sidebar-input" onkeyup="filterBreedList()" type="text" placeholder="Search">
-            <ul class="pet-selection">
-                
-            </ul>
+    <section class="banner banner--home">
+        <div class="container">
+            <h1 class="support-banner-heading">
+                Find Yourself a true friend
+            </h1>
+            <p class="support-banner-text">
+                We care for over 10,000 animals a year and work with other animal welfare organizations to find their forever home.
+            </p>
+            <a href="./animal-index.html">
+                <button class="btn secondary-btn" >
+                    Adopt today
+                </button>
+            </a>
         </div>
-        <!-- Sidebar mobile button -->
-        <button id="sidebar-button">Filters</button>
-        <div id="sidebar-mobileview">
-            <h3 class="sidebar-header">
-            All Breeds
-            </h3>
-            <input id="sidebar-input" type="text" placeholder="Search by breed">
-            <ul class="pet-selection">
-            </ul>
-        </div>
+    </section>
 
-        <!-- Adoption content -->
-        <div class="pet-space">
-            <div class="pet-box">
-                <img class="pet-img" alt="friendly-dog">
-                <div class="pet-info">About me: </div>
-            </div>
-        </div>
-        
-    </div>
-
-    <!-- Footer
-        
-    -->
-
-    <footer class="footer">
-
-        
-        <div class="footer-donate">
+    <section class="default-theme">
+        <div class="container">
             <h2>
-                Your support means the world to our organization and our pets.
+                Change their lives, and yours 
             </h2>
-            <button class="btn secondary-btn">
-                <i class="fas fa-heart"></i>
-                Donate Today
-            </button>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae commodi reprehenderit illo porro quis numquam!
+            </p>
         </div>
-    </footer>
-    <script src="./animal.js"></script>
+    </section>
+
+    <section class="gry-theme">
+        <div class="container">
+            <h2>
+                Ready to play
+            </h2>
+            
+        </div>
+    </section>
+
+    <section class="default-theme">
+        <div class="container">
+            <h2>
+                Upcoming Events
+            </h2>
+            <thead>
+                <tr>
+                    <th>
+                        Sunday
+                    </th>
+                    <th>
+                        Monday
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        Yes
+                    </td>
+                </tr>
+            </thead>
+        </div>
+    </section>
 </body>
 </html>

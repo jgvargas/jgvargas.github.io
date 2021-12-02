@@ -9,16 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="./animal.css">
-    <title>Support KC AAC</title>
+    <title>Support AAC</title>
 </head>
 <body>
-        <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <h1 class="nav-logo" style="font-size: 1.15em;">
-                KC Animal <i class="fas fa-heart logo-heart"></i>
-                <br>
-                Adoption Center
+                <a href="../index.html">
+                    Animal <i class="fas fa-heart logo-heart"></i>
+                    <br>
+                    Adoption Center
+                </a>
             </h1>
             <div id="mobile-menu">
                 <span></span>
@@ -27,7 +29,7 @@
             </div>
             <ul class="nav-list">
                 <li>
-                    <a href="/index.html">Home</a>
+                    <a href="./animal-home.html">Home</a>
                 </li>
                 <li>
                     <a href="./animal-index.html">Adopt</a>
@@ -36,32 +38,35 @@
                     <a href="./animal-support.html">Support</a>
                 </li>
                 <li>
-                    <a href="#0">Events</a>
+                    <a href="#0"><i class="fas fa-paw"></i></a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Body .showcase -->
-    <div class="showcase">
+    <!-- Main Body -->
+    <div>
         <!--Top Banner -->
-        <div class="support-banner">
-            <h2>
-                Monthly Donations
-            </h2>
-            <p>
-                Your monthly contribution means the world to us
-                and supports homeless pets around our community.
-            </p>
-            <button class="btn primary-btn">Donate</button>
-        </div>
-        <!-- Second strip -->
-        <div class="showcase-strip secondary-strip">
-            <div class="container">
-                <h1>
-                    KC Animal Adoption Center is powered by our community.
+        <section class="default-theme banner support-banner">
+            <div class="container ">
+                <h2 class="support-banner-heading">
+                    Monthly Donations
                 </h2>
-                <p>
+                <p class="support-banner-text">
+                    Your monthly contribution means the world to us
+                    and supports homeless pets around our community.
+                </p>
+                <button class="btn primary-btn">Donate</button>
+            </div>
+            
+        </section>
+        <!-- Second strip -->
+        <section class="default-theme">
+            <div class="container center-text">
+                <h2 class="section-heading">
+                    Animal Adoption Center is powered by our community.
+                </h2>
+                <p class="section-text">
                         We work towards 
                     sheltering and saving the lives of homeless pets. 
                     Being people powered means we need 
@@ -70,33 +75,34 @@
                     finding a home for every pet.
                 </p>
             </div>
-        </div>   
+        </section>   
         
         <!-- Third strip-->
-        <div class="showcase-strip primary-strip">
-            <div class="container">
-                <div class="strip-text-block">
-                    <h1>
-                        Volunteer Program
-                    </h1>
-                    <p>
+        <section class="gry-theme">
+            <div class="container flex">
+                <div class="shared-container flex-col">
+
+                    <h2 class="section-heading">
+                        Volunteers are the heart of our program
+                    </h2>
+                    <p class="section-text">
                         Volunteers are the heart of our sucess and without their time, talents, 
                         and resources we would not be able to save the lives of over 10,000 animals 
-                        each year. Whether you have a free day on the weekend or an occasional hour 
+                        each year. 
+                        <br><br>
+                        Whether you have a free day on the weekend or an occasional hour 
                         after work, there is a place for you here. Join us today to help 
                         change an animal’s life forever.
                     </p>
                 </div>
-                <div class="strip-img strip-img-volunteer">
-                    
+                <div class="img-volunteer">
                 </div>
-                
             </div>
-        </div>
+        </section>
             
         <!-- Last Strip -->
-        <section  class="showcase-strip secondary-strip">
-            <div class="container" id="user-signup">
+        <section  id="user-signup">
+            <div class="container">
 
                 <!-- Card -->
                 <div class="showcase-form card">
@@ -124,44 +130,64 @@
                         </button>
                     </form>
                 </div>
-
-                <!-- Puppy img-->
-                <div class="img-box">
-                    <div class="strip-img strip-img-puppy">
-                    </div>
-                </div>
                 
-                
-
             </div>
-            
         </section>
         
+        <section class="drk-blue-theme">
+            <div class="container flex">
+                <div class="shared-container flex-col">
+
+                    <h2 class="section-heading">
+                        Your Donations go a long way
+                    </h2>
+                    <ul style="color: #fff">
+                        <li>
+                            General pet supplies
+                        </li>
+                        <li>
+                            Emergency medical care
+                        </li>
+                        <li>World class adoption centers</li>
+                        <li>
+                            Community Events
+                        </li>
+                    </ul>
+                    <h2 class="section-heading">
+                        Thank you!
+                    </h2>
+                </div>
+                
+                <!-- Puppy img-->
+                <div class="img-puppy">
+                </div>
+            </div>
+        </section>
+
     </div>
     
     <!-- Footer -->
-    <div class="footer">
-            <div class="footer-media">
-
-                <div class="company-logo">
-                    <i class="fas fa-paw"></i>
-                    KC Animal Adoption Center
-                </div>
-                <div class="media-tray">
-                    <a href="#0" class="media-tray-items">
-                        <i class="fab fa-twitter-square fa-2x" ></i>
-                    </a>
-                    <a href="#0" class="media-tray-items">
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                    </a>
-                    <a href="#0" class="media-tray-items">
-                        <i class="fab fa-instagram-square fa-2x"></i>
-                    </a>
-                </div>
+    <footer>
+        <div class="footer-media">
+            <div class="company-logo">
+                <i class="fas fa-paw"></i>
+                Animal Adoption Center
             </div>
-            <p>
-                2020-2021 Copyright KC Animal Adoption, Inc. All rights NOT reserved.
-            </p>
-    </div> 
+            <div class="media-tray">
+                <a href="#0" class="media-tray-items">
+                    <i class="fab fa-twitter-square fa-2x" ></i>
+                </a>
+                <a href="#0" class="media-tray-items">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                </a>
+                <a href="#0" class="media-tray-items">
+                    <i class="fab fa-instagram-square fa-2x"></i>
+                </a>
+            </div>
+        </div>
+        <p>
+            2020-2021 Copyright Animal Adoption, Inc. All rights NOT reserved.
+        </p>
+    </footer> 
 </body>
 </html>

@@ -2,8 +2,18 @@
     TODO:
     - Refactor css properties
         - set global container
-        - petSpace grid not collapsing
     - Adopt page banner
+    - Sidebar need min/max
+
+    TABLE OF CONTENTS
+    -> General
+    -> Utilities
+    -> Navbar
+    -> Home Page
+    -> Support Page
+    -> Adopt Page
+    -> Footer
+    -> Mobile
 */
 :root {
     --primary-nav-color: #eaedef;
@@ -32,68 +42,24 @@ body {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.15em;
     line-height: 1.6;
-    min-height: 100%;
 }
 
-a {
-    text-decoration: none;
-    color: var(--nav-text-color);
-}
+a { color: #502c1e;}
 a:link { text-decoration: none;}
-a:hover { color: rgb(192, 192, 192);}
+a:visited { color: inherit;}
 
-ul {
-    list-style-type: none;
-}
+/*----------------
+    UTILITIES
+----------------*/
 
 .container {
-    max-width: 1300px;
     margin: 0 auto;
-    width: 80%;
+    width: min(85%, 1300px);
 }
 
-/* ------------------------
-    NAVBAR
-------------------------*/
-
-
-.navbar {
-    background: var(--primary-nav-color);
-    color: var(--nav-text-color);
-    height: 70px;
+section {
+    width: 100%;
 }
-
-.nav-container {
-    align-items: center;
-    display: flex;
-    max-width: 1300px;
-    margin: 0 auto;
-    justify-content: space-between;
-    width: 80%;
-}
-
-.nav-logo {
-    font-size: 1em;
-    cursor: pointer;
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 10px 0;
-    overflow: auto;
-}
-
-.nav-list {
-    display: flex;
-    color: var(--nav-text-color);
-}
-
-.nav-list a {
-    padding: 10px;
-    margin: 0 5px;
-}
-
-/*-----------------------
-    END OF NAVBAR
-------------------------*/
 
 .flex {
     display: flex;
@@ -104,273 +70,37 @@ ul {
     flex-direction: column;
 }
 
-#user-signup {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.even-col {
+    flex-basis: 100%;
 }
 
-.card {
-    background: var(--secondary-body-color);
-    padding: 10px 25px;
-    border-radius: 20px;
-    width: 300px;
-    color: white;
+.default-theme {
+    color: var(--secondary-text-color);
 }
 
-.support-banner {
+.gry-theme {
+    background-color:var(--primary-nav-color);
+    color: var(--secondary-text-color);
+}
+
+.drk-blue-theme {
+    background: var(--btn-secondary-color);
+    color: var(--nav-text-color);
+}
+
+.drk-blue-theme .section-heading {
+    color: var(--primary-nav-color);
+}
+
+.banner {
     box-sizing: border-box;
     height: 600px;
     min-width: 100%;
-    background-image: url(../img/two-dogs.bmp);
     background-repeat: no-repeat;
     background-size: 100%;
-    padding: 100px 50px;
-}
-.support-banner h2 {
-    margin: 0;
-    color: var(--primary-text-color);
-    text-transform: uppercase;
-    font-size: 62px;
-    font-weight: 600;
-    letter-spacing: 0px;
+    padding: 100px 0;
 }
 
-.support-banner p {
-    margin: 20px 0;
-    color: var(--secondary-text-color);
-    text-align: left;
-    height: 50px;
-    font-size: 1.7em;
-    word-wrap: break-word;
-    word-break: break-word;
-    height: 150px;
-    width: 450px;
-}
-
-/* .strip used for full width .showcase*/
-.showcase-strip {
-    padding: 3%;
-    width: 100%;
-}
-
-.primary-strip {
-    background-color:var(--primary-nav-color);
-}
-
-.secondary-strip {
-    background-color: transparent;  
-}
-
-.showcase-strip h1 {
-    color: var(--btn-secondary-color);
-    font-size: 36px;
-    font-weight: 600;
-    letter-spacing: 0px;
-}
-
-.showcase-strip p {
-    color: var(--secondary-text-color);
-    font-size: 1.5em;
-    text-align: left;
-    word-wrap: break-word;
-}
-
-.strip-img {
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.strip-img-volunteer {
-    height: 300px;
-    width: 500px;
-    background-image: url(../img/volunteer.bmp);
-}
-
-.strip-img-puppy {
-    background-image: url(../img/puppy-smile.bmp);
-    height: 300px;
-    width: 450px;
-    border-radius: 400px;
-}
-
-.strip-text-box {
-    word-wrap: break-word;
-    width: 100px;
-}
-
-.img-box {
-    background: radial-gradient(purple, black);
-    z-index: 500;
-}
-
-/*-------------------------------
-    Adoption Page
---------------------------------*/
-
-.banner {
-    background: url("../img/dog-treats.jpg") no-repeat;
-    background-size: cover;
-    justify-content: center;
-    display: grid;
-    height: 250px;
-}
-
-.banner-text {
-    background: #eaedef;
-    display: grid;
-    align-items: center;
-    height: 100%;
-    opacity: 0.6;
-    padding: 0 8rem;
-    color: var(--secondary-body-color);
-    font-weight: 600;
-}
-
-.pet-space {
-    background-color: transparent;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    height: 100%;
-}
-
-.pet-box {
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary-nav-color);
-    margin: 1rem;
-    align-items: center;
-}
-
-.pet-info {
-    color: #003496;
-    margin-bottom: 1rem;
-    padding: .5rem 1rem;
-}
-
-.pet-info h3 {
-    text-align: center;
-}
-
-.pet-img {
-    cursor: pointer;
-    margin: 1rem;
-    width: 250px;
-    height: 250px;
-}
-
-/*----------------------------------
-    Sidebar
-----------------------------------*/
-
-.main-container {
-    display: flex;
-    max-width: 1300px;
-    margin: 0 auto;
-    width: 80%;
-}
-
-.sidebar {
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-grow: 0.5;
-    background-color: var(--color-pink-10);
-    font-size: 1em;
-    padding: 10px 25px;
-    margin: 1.5rem 0;
-    max-width: 200px;
-}
-
-.sidebar-header {
-    padding: 1px;
-    cursor: pointer;
-}
-
-.sidebar-li {
-    cursor: pointer;
-    margin: .5rem 0 0 .5rem;
-    text-transform: capitalize;
-}
-
-.sidebar-li:hover,
-.sidebar-header:hover {
-    color: #606060;
-}
-
-#sidebar-button {
-    display: none;
-}
-
-#sidebar-mobileview {
-    display: none;
-}
-
-#sidebar-input {
-    width: 100%;
-    background-image: url(../img/search-solid.svg);
-    background-repeat: no-repeat;
-    background-size: 13px;
-    background-position: 5px;
-    padding-left: 20px;
-}
-
-/*---------------------------------------------
-    Footer
----------------------------------------------*/
-/*
-.footer {
-    
-    grid-column: 1 /3;
-    grid-row: 3/4;
-    display: flex;
-    flex-direction: column;
-    
-    
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem; 
-}
-*/
-
-.footer-donate {
-    height: 300px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--secondary-body-color);
-    color: white;
-}
-
-.footer-media {
-    display: flex;
-    justify-content: space-around;
-    background: var(--primary-nav-color);
-    color:grey;
-}
-
-.footer p {
-    text-align: center;
-    font-size: 0.9em;
-}
-
-.media-tray {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: space-between;
-}
-
-.media-tray-items {
-    margin: 0 10px;
-    color:var(--secondary-text-color);
-}
-
-/*********** Utility *************/
 .btn {
     padding: 10px 15px;
     border: none;
@@ -395,13 +125,303 @@ ul {
     background-color: var(--btn-hover-color);
 }
 
-.logo-heart {
-    color: var(--btn-primary-color);
-}
-
 .padded {
     margin: 20px 20px;
 }
+
+
+/* ------------------------
+    NAVBAR
+------------------------*/
+
+.navbar {
+    background: var(--primary-nav-color);
+    color: var(--nav-text-color);
+    height: 70px;
+}
+
+.nav-container {
+    align-items: center;
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.nav-logo {
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+    overflow: auto;
+}
+
+.logo-heart { color: var(--btn-primary-color); }
+
+.nav-list {
+    display: flex;
+    color: var(--nav-text-color);
+    list-style-type: none;
+}
+
+.nav-list a {
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.nav-list a:hover { 
+    color: rgb(192, 192, 192);
+}
+
+/*----------------
+    HOME PAGE
+----------------*/
+
+.banner--home {
+    background-image: url(../img/adopt-banner.jpg);
+}
+
+/*----------------
+    SUPPORT PAGE
+----------------*/
+
+.support-banner {
+    background-image: url(../img/two-dogs.bmp);
+}
+.support-banner-heading {
+    margin: 0;
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    font-size: 62px;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+.support-banner-text {
+    margin: 20px 0;
+    text-align: left;
+    height: 50px;
+    font-size: 1.7em;
+    word-wrap: break-word;
+    word-break: break-word;
+    height: 150px;
+    width: 450px;
+}
+
+.center-text {
+    padding-right: 4rem;
+    justify-content: space-between;
+}
+
+.section-heading {
+    color: var(--btn-secondary-color);
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin: 2rem 0 0 0;
+    text-transform: uppercase;
+}
+
+.section-text {
+    color: var(--secondary-text-color);
+    font-size: 1.5em;
+    margin: 2rem 0;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.shared-container {
+    width: 50%;
+}
+
+.img-volunteer {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/volunteer.bmp);
+    height: 300px;
+    margin: 2rem 0;
+    width: 50%;
+}
+
+.img-puppy {
+    background-image: url(../img/puppy-smile.bmp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 450px;
+}
+
+#user-signup {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-position: center;
+    background-size: 100%;
+}
+
+.card {
+    background: var(--secondary-body-color);
+    padding: 10px 25px;
+    border-radius: 20px;
+    width: 300px;
+    color: white;
+    margin: 3rem 0;
+}
+
+/*-------------------------------
+    Adoption Page
+--------------------------------*/
+
+.banner--adopt {
+    background: url("../img/dog-treats.jpg") no-repeat;
+    background-size: cover;
+    justify-content: center;
+    display: grid;
+    height: 250px;
+}
+
+.banner-text {
+    background: #eaedef;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    opacity: 0.7;
+    padding: 0 8rem;
+    color: var(--secondary-body-color);
+    font-weight: 600;
+    line-height: 1;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.pet-space {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.pet-box {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    background-color: var(--primary-nav-color);
+    margin: 1rem;
+    align-items: center;
+}
+
+.pet-info {
+    color: #003496;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+}
+
+.pet-info h3 {
+    text-align: center;
+}
+
+.pet-img {
+    cursor: pointer;
+    margin: 1rem;
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+/*----------------------------------
+    Adoption Sidebar
+----------------------------------*/
+
+.sidebar {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--color-pink-10);
+    font-size: 1em;
+    padding: 10px 25px;
+    margin: 1rem 0;
+    min-width: 163px;
+    max-width: 163px;
+}
+
+.sidebar-header {
+    padding: 1px;
+    cursor: pointer;
+}
+
+#sidebar-input {
+    width: 100%;
+    height: 2rem;
+    background-image: url(../img/search-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-position: 5px;
+    padding-left: 20px;
+}
+
+.sidebar-li {
+    cursor: pointer;
+    margin: .5rem 0 0 .5rem;
+    text-transform: capitalize;
+}
+
+.sidebar-li:hover,
+.sidebar-header:hover {
+    color: #606060;
+}
+
+#sidebar-button {
+    display: none;
+}
+
+#sidebar-mobileview {
+    display: none;
+}
+
+/*---------------------------------------------
+    Footer
+---------------------------------------------*/
+
+footer {
+    width: 100%;
+    background: var(--primary-nav-color);
+    padding: 1.5rem;
+    color: grey;
+}
+
+.footer-media {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.media-tray {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.media-tray-items {
+    margin: 0 10px;
+    color:var(--secondary-text-color);
+}
+
+/*
+    MOBILE
+*/
 
 @media screen and (max-width: 880px) {
     .nav-list {
@@ -465,11 +485,9 @@ ul {
         }
     }
 
-    .main-container {
+    .container {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
     }
-
-    
 }
