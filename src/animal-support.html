@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="./animal.css">
     <title>Support AAC</title>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <nav>
+        <div class="nav-container container">
             <h1 class="nav-logo" style="font-size: 1.15em;">
                 <a href="../index.html">
                     Animal <i class="fas fa-heart logo-heart"></i>
@@ -48,11 +49,11 @@
     <div>
         <!--Top Banner -->
         <section class="default-theme banner support-banner">
-            <div class="container ">
-                <h2 class="support-banner-heading">
+            <div class="container">
+                <h2 class="banner-heading">
                     Monthly Donations
                 </h2>
-                <p class="support-banner-text">
+                <p class="banner-text">
                     Your monthly contribution means the world to us
                     and supports homeless pets around our community.
                 </p>
@@ -62,9 +63,9 @@
         </section>
         <!-- Second strip -->
         <section class="default-theme">
-            <div class="container center-text">
-                <h2 class="section-heading">
-                    Animal Adoption Center is powered by our community.
+            <div class="container">
+                <h2 class="section-heading text-center">
+                    Animal Adoption Center is powered by our community
                 </h2>
                 <p class="section-text">
                         We work towards 
@@ -79,31 +80,59 @@
         
         <!-- Third strip-->
         <section class="gry-theme">
-            <div class="container flex">
-                <div class="shared-container flex-col">
-
-                    <h2 class="section-heading">
-                        Volunteers are the heart of our program
-                    </h2>
-                    <p class="section-text">
-                        Volunteers are the heart of our sucess and without their time, talents, 
-                        and resources we would not be able to save the lives of over 10,000 animals 
-                        each year. 
-                        <br><br>
-                        Whether you have a free day on the weekend or an occasional hour 
-                        after work, there is a place for you here. Join us today to help 
-                        change an animal’s life forever.
-                    </p>
+            <div class="container">
+                <h2 class="section-heading text-center">
+                    Volunteers are the heart of our program
+                </h2>
+                <div class="split">
+                    <div>
+                        <p class="section-text">
+                            Volunteers are the heart of our sucess and without their time, talents, 
+                            and resources we would not be able to save the lives of over 10,000 animals 
+                            each year. 
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <img src="../img/volunteer.bmp" alt="">
+                    </div>
                 </div>
-                <div class="img-volunteer">
-                </div>
+                
             </div>
         </section>
             
         <!-- Last Strip -->
-        <section  id="user-signup">
+        <section class="lgt-blue-theme">
             <div class="container">
-
+                <h2 class="section-heading text-center">
+                    Your Donations go a long way
+                </h2>
+                <div class="split">
+                    <div>
+                        <img src="../img/adopt-vet.jpg" alt="">
+                    </div>
+                    <div>
+                        
+                        <ul class="list-supplies">
+                            <li>
+                                General pet supplies
+                            </li>
+                            <li>
+                                Emergency medical care
+                            </li>
+                            <li>World class adoption centers</li>
+                            <li>
+                                Community events
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="user-signup" class="drk-blue-theme">
+            <div class="container split">
                 <!-- Card -->
                 <div class="showcase-form card">
                     <h2>
@@ -130,37 +159,9 @@
                         </button>
                     </form>
                 </div>
-                
-            </div>
-        </section>
-        
-        <section class="drk-blue-theme">
-            <div class="container flex">
-                <div class="shared-container flex-col">
-
-                    <h2 class="section-heading">
-                        Your Donations go a long way
-                    </h2>
-                    <ul style="color: #fff">
-                        <li>
-                            General pet supplies
-                        </li>
-                        <li>
-                            Emergency medical care
-                        </li>
-                        <li>World class adoption centers</li>
-                        <li>
-                            Community Events
-                        </li>
-                    </ul>
-                    <h2 class="section-heading">
-                        Thank you!
-                    </h2>
-                </div>
-                
-                <!-- Puppy img-->
-                <div class="img-puppy">
-                </div>
+                <div>
+                    <img src="../img/adopt-thankyou.jpg" alt="">
+                </div>                
             </div>
         </section>
 
@@ -189,5 +190,7 @@
             2020-2021 Copyright Animal Adoption, Inc. All rights NOT reserved.
         </p>
     </footer> 
+
+
 </body>
 </html>

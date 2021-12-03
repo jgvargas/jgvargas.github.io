@@ -9,8 +9,9 @@
         - Age should not be 0
 */
 
-const petSpace = document.querySelector(".pet-space")
-const sideBarList = document.querySelector(".pet-selection")
+// Adopt dependencies
+const petSpace = document.querySelector(".pet-space");
+const sideBarList = document.querySelector(".pet-selection");
 const randomImageApiUrl = "https://dog.ceo/api/breeds/image/random";
 
 // Dynamic html selection 
@@ -396,7 +397,17 @@ function renderAdoptPage() {
     //     petSpace.innerHTML += petSpaceHTML;
     //     console.log("Finished after fetch")
     // }))
-    
 }
 
-renderAdoptPage();
+function renderHomePage() {
+    console.log("Hello Home page")
+
+    // Home dependencies
+    const homePets = document.querySelector(".pet-showcase");
+
+    homePets.innerHTML = '';
+    for( let i = 0; i < 3; i++) {
+        
+    }
+
+}
