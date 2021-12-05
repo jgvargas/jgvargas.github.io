@@ -56,11 +56,21 @@ ul {
     margin: 1rem 0;
 }
 
+@media (max-width:960px) {
+    .split {
+        flex-direction: column;
+    }
+
+    .project-img {
+        margin: 0 auto;
+        width: 50%;
+    }
+}
+
 img {
     width: 100%;
     display: block;
 }
-
 
 /*--------------------
     Nav menu
