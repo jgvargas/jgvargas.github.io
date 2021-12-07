@@ -1,7 +1,7 @@
 /*
     TODO:
-    - Adopt page banner
-    - Mobile 'Filter' button needs implementation
+    - Adopt page
+        - Mobile 'Filter' button needs implementation
 
     TABLE OF CONTENTS
     -> General
@@ -11,7 +11,6 @@
         -> Adopt sidebar
     -> Support Page
     -> Footer
-    -> Mobile
 */
 
 :root {
@@ -65,7 +64,6 @@ section {
 }
 
 .section-text {
-    color: var(--color-grey-20);
     font-size: 1.5em;
     line-height: 1.5;
     text-align: left;
@@ -193,7 +191,6 @@ a:visited {
 /*-----------------------------
     NAVBAR
 -----------------------------*/
-
 nav {
     background-color: var(--color-blue-30);
     color: var(--color-white);
@@ -218,8 +215,15 @@ nav {
 .logo-heart { color: var(--color-red-10); }
 
 .nav-list {
-    display: none;
+    display: grid;
+    grid-template-columns: auto;
     list-style-type: none;
+    background: var(--color-blue-30);
+    position: absolute;
+    top: 77px;
+    right: -1000px;
+    padding: 1rem;
+    transition: all 0.5s ease;
 }
 
 .nav-list a {
@@ -232,6 +236,30 @@ nav {
 
 .nav-list a:hover { 
     color: var(--color-blue-10);
+}
+
+.nav-list.active {
+    background: var(--color-blue-30);
+    color: var(--color-grey-10);
+    display: grid;
+    position: absolute;
+    height: 30vh;
+    right: 0%;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+/* Desktop settings */
+@media (min-width:811px) {
+    .nav-list {
+        display: flex;
+        background: transparent;
+        position: static;
+    }
+
+    #mobile-menu {
+        display: none;
+    }
 }
 
 #mobile-menu {
@@ -248,13 +276,6 @@ nav {
     transition: all 0.3s ease-in-out;
 }
 
-.nav-list.active {
-    background: var(--color-blue-10);
-    width: 30vh;
-    left: 100%;
-    display: block;
-}
-
 #mobile-menu.is-active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -265,16 +286,6 @@ nav {
 
 #mobile-menu.is-active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-}
-
-@media (min-width:811px) {
-    .nav-list {
-        display: flex;
-    }
-
-    #mobile-menu {
-        display: none;
-    }
 }
 
 /*-----------------------------
@@ -291,6 +302,14 @@ nav {
     font-size: 5rem;
     font-weight:bold;
     text-transform: uppercase;
+}
+
+.list-supplies {
+    text-align: left;
+    font-size: 1.7em;
+    word-wrap: break-word;
+    word-break: break-word;
+    margin-left: 2rem;
 }
 
 /*-------------------------------
@@ -454,10 +473,13 @@ nav {
     width: 450px;
 }
 
-.shared-container {
-    width: 50%;
+.card {
+    border-radius: 20px;
+    padding: 10px 25px;
+    width: 100%;
 }
-#user-signup {
+
+#sign-up {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -465,13 +487,18 @@ nav {
     background-size: 100%;
 }
 
-.card {
-    background: var(--secondary-body-color);
-    padding: 10px 25px;
-    border-radius: 20px;
-    width: 300px;
-    color: white;
-    margin: 3rem 0;
+input[type=text] {
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+input[type=checkbox] {
+    margin: .5rem .5rem .5rem 0;
+}
+
+.form-control {
+    font-size: 1.5rem;
 }
 
 /*---------------------------------------------

@@ -112,7 +112,9 @@
                         <img src="../img/adopt-vet.jpg" alt="">
                     </div>
                     <div>
-                        
+                        <p class="section-text">
+                            Pets in our care sometimes require extra attention and your support provides life changing care.
+                        </p>
                         <ul class="list-supplies">
                             <li>
                                 General pet supplies
@@ -131,12 +133,12 @@
             </div>
         </section>
         
-        <section id="user-signup" class="drk-blue-theme">
+        <section id="sign-up" class="drk-blue-theme">
             <div class="container split">
                 <!-- Card -->
-                <div class="showcase-form card">
-                    <h2>
-                        Reach out with how you'd like to help
+                <div class="card">
+                    <h2 class="section-heading">
+                        Reach out with how you would like to help
                     </h2>
                     <form action="">
                         <div class="form-control">
@@ -148,13 +150,21 @@
                         <div class="form-control">
                             <input type="text" name="phone-number" placeholder="phone number" required>
                         </div>
+                    
                         <div class="form-control">
-                            <input type="checkbox">Foster
+                            <input type="checkbox" id="foster">
+                            <label for="foster">Foster</label>
                         </div>
                         <div class="form-control">
-                            <input type="checkbox">Volunteer
+                            <input type="checkbox" id="volunteer">
+                            <label for="volunteer">Volunteer</label>
                         </div>
-                        <button type="submit" value="Send" class="btn secondary-btn padded">
+                        <div class="form-control">
+                            <input type="checkbox" id="donate">
+                            <label for="donate">Donate</label>
+                        </div>
+
+                        <button type="submit" value="Send" class="btn secondary-btn">
                             Submit
                         </button>
                     </form>
