@@ -49,7 +49,7 @@ section {
     padding: 4rem;
 }
 
-@media (min-width: 810px) {
+@media (min-width: 811px) {
     .section {
         padding: 1rem;
     }
@@ -91,7 +91,7 @@ a:visited {
     gap: 2em;
 }
 
-@media (min-width: 810px) {
+@media (min-width: 811px) {
     .split {
         flex-direction: row;
     }
@@ -150,7 +150,7 @@ a:visited {
     color: white;
     cursor: pointer;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 6px;
     -webkit-border-radius: 6px;
 }
@@ -219,6 +219,7 @@ nav {
 
 .nav-list {
     display: none;
+    list-style-type: none;
 }
 
 .nav-list a {
@@ -247,6 +248,13 @@ nav {
     transition: all 0.3s ease-in-out;
 }
 
+.nav-list.active {
+    background: var(--color-blue-10);
+    width: 30vh;
+    left: 100%;
+    display: block;
+}
+
 #mobile-menu.is-active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -259,10 +267,9 @@ nav {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-@media (min-width:810px) {
+@media (min-width:811px) {
     .nav-list {
         display: flex;
-        list-style-type: none;
     }
 
     #mobile-menu {
@@ -279,6 +286,13 @@ nav {
     height: 600px;
 }
 
+.accent-section-heading {
+    color: var(--color-netural-20);
+    font-size: 5rem;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+
 /*-------------------------------
     Adoption Page
 --------------------------------*/
@@ -293,7 +307,7 @@ nav {
 
 .banner-text--adopt {
     font-family: 'Architects Daughter', cursive;
-    background: #eaedef;
+    background: rgba(234, 237, 239, 0.8);
     display: grid;
     align-items: center;
     height: 100%;
@@ -366,7 +380,7 @@ nav {
     display: none;
 }
 
-@media (min-width: 810px) {
+@media (min-width: 811px) {
     .sidebar {
         border-radius: 10px;
         display: flex;
@@ -469,6 +483,10 @@ footer {
     background: var(--primary-nav-color);
     padding: 1.5rem;
     color: grey;
+}
+
+footer h2 {
+    margin: 2rem 0;
 }
 
 .footer-media {
