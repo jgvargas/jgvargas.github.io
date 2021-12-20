@@ -1,7 +1,6 @@
 /*
     TODO: 
     - Mobile view
-        - hamburger menu setup
         - filter button system
     - Loading animation while waiting for API
     - Random pet detail assignment
@@ -32,6 +31,7 @@ function getDogBreedImages( breedName) {
 function createSpecificBreedHtml(json, breedName) {
     let imageList = json.message;
     let name;
+    let petSpaceHTML = ""
     
     petSpace.innerHTML ="";
 
@@ -43,7 +43,7 @@ function createSpecificBreedHtml(json, breedName) {
             name = getName(false);
         let age = createAge();
 
-        petSpace.innerHTML += 
+        petSpaceHTML += 
         `<div class="pet-box">
             <img src="${imageSrc}" class="pet-img" alt="friendly-dog">
             <div class="pet-info"><h3>${name} | ${ gender }</h3>
@@ -51,6 +51,8 @@ function createSpecificBreedHtml(json, breedName) {
             </div>
         </div>`;
     })
+
+    petSpace.innerHTML = petSpaceHTML;
 }
 
 sideBarList.addEventListener('click', event => {
@@ -84,11 +86,13 @@ function filterBreedList() {
 // SIDEBAR CREATION
 function createSidebar(breedList) {
     sideBarList.innerHTML = '';
+    let sideBarListHTML = '';
 
     breedList.forEach( breed => {
         let sideBarHTML = `<li class="sidebar-li">${breed}</li>`;
-        sideBarList.innerHTML += sideBarHTML;
+        sideBarListHTML += sideBarHTML;
     })
+    sideBarList.innerHTML = sideBarListHTML;
 }
 
 function createDogBreedList() {
@@ -121,7 +125,7 @@ function createRandomPet() {
 }
 
 function createAge() {
-    let years = Math.round( Math.random() * 12);
+    let years = Math.ceil( Math.random() * 12);
     let ageStatement = years + " year old"; 
     return ageStatement;
 }
@@ -399,25 +403,13 @@ function renderAdoptPage() {
     // }))
 }
 
-function renderHomePage() {
-    console.log("Hello Home page")
-
-    // Home dependencies
-    const homePets = document.querySelector(".pet-showcase");
-
-    homePets.innerHTML = '';
-    for( let i = 0; i < 3; i++) {
-        
-    }
-}
-
-/**----------------------- 
+/*----------------------------------------------------- 
  * Mobile Nav controls
- ------------------------*/
-const menu = document.querySelector("#mobile-menu");
-const menuLinks = document.querySelector(".nav-list")
-
-menu.addEventListener('click', () => {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-})
+ ----------------------------------------------------*/
+ const menu = document.querySelector("#mobile-menu");
+ const menuLinks = document.querySelector(".nav-list")
+ 
+ menu.addEventListener('click', () => {
+     menu.classList.toggle('is-active');
+     menuLinks.classList.toggle('active');
+ })
