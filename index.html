@@ -12,13 +12,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <!-- Logo -->
-            <a href="#" id="logo">@Jgvargasjr</a>
+            <div id="logo">
+                @Jgvargasjr
+            </div>
 
             <div class="nav-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -37,102 +40,69 @@
                     <a class="nav-links active-page" href="#about">About</a>
                 </li>
                 
-                <li class="nav-btn">
-                    <!--
-                        <button class="nav-btn">Contact</button>
-                    -->
+                <li class="nav-mobile-btn">
                     <a href="mailto:jgvargasjr@outlook.com" class="button">
                         Contact
                     </a>
                 </li>
             </ul>
+
         </div>
-        
     </nav>
 
     <!-- Start screen -->
     <section id="home">
         <div class="container">
             <p class="page-pretitle">
-                <a href="#">Hello, my name is Juan</a>
+                Hello, my name is Juan
             </p>
-            <h1 class="page-title">I have fun making websites.</h1>
+            <h2 class="page-title">
+                I have fun making websites.
+            </h1>
             <p class="section-text">
                 I'm a software developer and alumni of the University of Texas at Rio Grande Valley computer science program. Nice to meet you!
             </p>
+            <div class="toggle text-center">
+                <input type="checkbox" id="toggle">
+                <label for="toggle"></label>
+            </div>
         </div>
-    </section>
+    </section>   
 
     <!-- Projects section -->
     <section id="projects">
         <div class="container">
-
-            <h2 class="project-header text-center">
-                My recent work
-            </h2>
-            <!-- Portfolio section-->
-            <div class="split">
-                <div class="project">
-                    <div class="project-title">
-                        <a href="./src/animal-home.html">
-                            KC Animal Adoption
-                        </a>
-                        
-                    </div>
-                    <div class="project-details">
-                        <p>
-                            This project was made with HTML/CSS/JS with the help 
-                            of a dog api for random images
-                        </p>
-                        <ul>
-                            <li>Usage of a public api</li>
-                            <li>Flexbox for design structure</li>
-                        </ul>
-                        <p>
-                            Click the image to view the site.
-                            <br>
-                            View code <a href="https://github.com/jgvargas/jgvargas.github.io/blob/main/src/animal-index.html">here </a><i class="fab fa-github"></i>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <a href="./src/animal-home.html">
-                        <img class="project-img" title="Click for project page" src="./img/animal-project-preview.PNG">
-                    </a>
-                </div>
-
-            </div>
             
-            <div class="split">
-                <div class="project">
-                    <div class="project-title">
-                        <a href="#projects">My portfolio page</a>
-                        
-                    </div>
-                    <div class="project-details">
-                        <p>
-                            This project was made with HTML/CSS/JS to help showcase my work.
-                        </p>
-                        <ul>
-                            <li>Flexbox for design structure</li>
-                            <li>Mobile friendly</li>
-                        </ul>
-                        <p>
-                            Click the image to view the site.
-                            <br>
-                            View code <a href="https://github.com/jgvargas/jgvargas.github.io/blob/main/index.html">here </a><i class="fab fa-github"></i>
-                        </p>
-                    </div>
-                </div>
+            <div class="page-title text-center">
+                My recent work
+            </div>
 
-                <div>
-                    <img class="project-img" src="./img/my-portfolio-preview.PNG">
+            <div class="split">
+                <div class="card card-grow">
+                    <div class="project-title text-center">
+                        <a href="./src/animal-home.html" class="button">Animal Adoption Center</a>
+                    </div>
+                    <img class="project-img" src="./img/animal-project-preview.PNG" alt="">
+                </div>
+                <div class="card card-grow">
+                    <div class="project-title text-center">
+                        <a href="" class="button">Enhanced Bookmarks</a>
+                    </div>
+                    <img src="./img/bookmarks-preview.PNG" alt="" class="project-img">
+                    
+                </div>
+                <div class="card card-grow">
+                    <div class="project-title text-center">
+                        <a href="" class="button">My portfolio page</a>
+                    </div>
+                    <img src="./img/my-portfolio-preview.PNG" alt="" class="project-img">
                 </div>
             </div>
+
         </div>
-        
     </section>
 
+    <!-- About section-->
     <section id="about">
         <div class="container flex-col">
             
@@ -140,7 +110,7 @@
                 A few things about me
             </h1>
             
-            <div class="split">
+            <div class="split card">
                 <div class="align-section">
                     <p class="section-text">
                     After a few years of living in Kansas City, Missouri I recently decided to moved back to Texas. 
@@ -151,7 +121,7 @@
                     </p>
                 </div>
 
-                <div>
+                <div class="">
                     <img src="./img/my_picture.jpg" alt="picture of me" class="about-img">
                 </div>
             </div>
@@ -159,9 +129,17 @@
     </section>
 
     <footer>
-        <p>
-            Thanks for taking time to look at my page! Hope to hear from you
-        </p>
+        <div class="text-center footer-container">
+            <div class="split">
+                <i class="fab fa-linkedin-in fa-2x"></i>
+                <i class="fab fa-github fa-2x"></i>
+            </div>
+            
+            <p>
+                Thanks for taking time to look at my page! Hope to hear from you
+            </p>
+        </div>
+        
     </footer>
 
     <script src="/app.js"></script>
