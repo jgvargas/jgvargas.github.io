@@ -1,32 +1,33 @@
 const menu = document.querySelector('#mobile-menu')
 const menuLinks = document.querySelector('.nav-menu')
+
 const toggle = document.querySelector('.toggle')
+let storedTheme = localStorage.getItem("userTheme")
 
-let isChecked = localStorage.getItem("userTheme")
+console.log(storedTheme)
+if(storedTheme) {
+    document.documentElement.setAttribute('data-theme', storedTheme)
+}
 
-console.log(isChecked)
 
+// Theme change
+toggle.addEventListener('change', (event) => {
+    storedTheme = event.target.checked;
 
+    let theme = 'light'
+    let currentTheme = document.documentElement.getAttribute('data-theme')
+    
+    if(currentTheme === "light") {
+        theme = 'dark'
+    }
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem("userTheme", theme)
+})
 
-// Toggle when menu is clicked
+// Mobile menu
 menu.addEventListener('click', () => {
     //Adds a classlist to menu
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
 });
-
-// theme change
-toggle.addEventListener('change', (event) => {
-    isChecked = event.target.checked;
-    let theme = 'light'
-
-    
-    localStorage.setItem("userTheme", theme)
-    
-    if(isChecked) {
-        document.documentElement.setAttribute('data-theme', 'dark')
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light')
-    }
-})
 
