@@ -99,7 +99,7 @@ ul {
     .project-img,
     .about-img {
         margin: 0 auto;
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -184,9 +184,9 @@ section {
     transform: translateY(2px);
 }
 
-/*---------------
-    Theme toggle
----------------*/
+/*---------------------
+    Theme toggle design
+----------------------*/
 
 .toggle input[type='checkbox'] {
     display: none;
@@ -230,7 +230,7 @@ section {
 }
 
 .cloud {
-    background: #9da2a5;
+    background: #b8babb;
     border-radius: 5px;
     box-shadow: 2px 2px rgba(0,0,0,0.2);
     height: 10px;
@@ -242,10 +242,21 @@ section {
 
     -webkit-animation: backandforth 20s ease 0s;
     -webkit-animation-iteration-count:infinite;
-    animation: backandforth 20s ease 0s;
+    animation: backandforth 20s linear 0s;
     animation-iteration-count:infinite;
 }
 
+@-webkit-keyframes backandforth {
+    0%{left: -20;} 
+    50%{left:80%;} 
+    100%{left:-20%;}
+}
+
+@keyframes backandforth {
+    0%{left:-20%;} 
+    50%{left:80%;} 
+    100%{left:-20%;}
+}
 .cloud::before,
 .cloud::after {
     background: inherit;
@@ -268,18 +279,6 @@ section {
     width: 10px;
     top: -9px;
     left: -13px;
-}
-
-@-webkit-keyframes backandforth {
-    0%{left: 0;} 
-    50%{left:100%;} 
-    100%{left:0;}
-}
-
-@keyframes backandforth {
-    0%{left:0;} 
-    50%{left:100%;} 
-    100%{left:0;}
 }
 
 /*--------------------
@@ -362,6 +361,7 @@ section {
     text-transform: uppercase;
     font-weight: 700;
     padding-bottom: 1rem;
+    color: var(--page-pretitle);
 }
 
 .project-details {
@@ -375,27 +375,49 @@ section {
     margin: 1rem;
 }
 
+@media (max-width:960px) {
+
+    #projects .card {
+        margin: 0 auto;
+        width: 70%;
+    }
+}
+
 /*---------------------------
-    ABOUT SECTION
+    ABOUT SECTION and FOOTER
 -----------------------------*/
 
 #about p {
-    padding-right: 2rem;
+    padding: 40% 0;
+}
+
+@media (max-width:960px) {
+
+    #about .card {
+        margin: 0 auto;
+        width: 70%;
+    }
 }
 
 footer {
     background: var(--nav-bg);
     color: var(--color-white);
-}
-
-.footer-container {
-    width: min(80%, 1110px);
-    margin: 0 auto;
+    padding: 2rem 0;
+    color: #fff;
 }
 
 footer p {
     text-align: center;
-    padding: 2rem;
+    padding-top: 1rem;
+    font-size: .75rem;
+}
+
+footer i {
+    margin: 0 .5rem;
+}
+
+footer a {
+    color: var(--nav-link);
 }
 
 /*---------------------------
@@ -463,6 +485,7 @@ footer p {
 
     #mobile-menu {
         position: absolute;
+        cursor: pointer;
         top: 20%;
         right: 5%;
         transform: translate(5%, 20%);
