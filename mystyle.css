@@ -375,6 +375,10 @@ section {
     margin: 1rem;
 }
 
+#about .fab {
+    color: #fff;
+}
+
 @media (max-width:960px) {
 
     #projects .card {
