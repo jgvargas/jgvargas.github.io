@@ -401,7 +401,13 @@ section {
         margin: 0 auto;
         width: 70%;
     }
+
+    .skills-list {
+        flex-direction: row;
+    }
 }
+
+
 
 footer {
     background: var(--nav-bg);
