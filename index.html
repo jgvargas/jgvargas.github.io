@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="loadTheme()">
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -74,14 +74,13 @@
 
     <!-- Projects section -->
     <section id="projects">
-        <div class="container">
-            
+        <div class="container card">
             <div class="page-title text-center">
                 My recent work
             </div>
 
             <div class="split">
-                <div class="card card-grow">
+                <div class="card-grow">
                     <div class="project-title text-center">
                         Animal Adoption site
                     </div>
@@ -89,7 +88,7 @@
                         <img class="project-img" src="./img/animal-project-preview.PNG" alt="">
                     </a>
                 </div>
-                <div class="card card-grow">
+                <div class=" card-grow">
                     <div class="project-title text-center">
                         Enhanced Bookmarks
                     </div>
@@ -98,7 +97,7 @@
                     </a>
                     
                 </div>
-                <div class="card card-grow">
+                <div class="card-grow">
                     <div class="project-title text-center">
                         My portfolio page
                     </div>
@@ -114,11 +113,10 @@
     <!-- About section-->
     <section id="about">
         <div class="container flex-col">
-            
-            <h1 class="page-title text-center">
-                A few things about me
-            </h1>
             <div class="card">
+                <h1 class="page-title text-center">
+                    A few things about me
+                </h1>
                 <div class="split">
                     <div class="align-section">
                         <p class="section-text">
@@ -139,6 +137,7 @@
                     <i class="fab fa-css3-alt fa-3x"></i>
                     <i class="fab fa-python fa-3x"></i>
                     <i class="fab fa-react fa-3x"></i>
+                    <i class="fab fa-java fa-3x"></i>
                 </div>
             </div>
         </div>
@@ -155,7 +154,7 @@
                 </a>
             </div>
             <p>
-                Thank you!
+                Thank you for checking out my page!
             </p>
         </div>
     </footer>

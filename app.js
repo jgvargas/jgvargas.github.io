@@ -4,11 +4,16 @@ const toggle = document.querySelector('.toggle')
 let storedTheme = localStorage.getItem("userTheme")
 
 // Theme logic
+function loadTheme() {
+    console.log("Hello")
+}
+
 if(storedTheme) {
     console.log(`The stored theme is ${storedTheme}`)
     document.documentElement.setAttribute('data-theme', storedTheme)
-    if(storedTheme === 'dark')
+    if(storedTheme === 'dark') {
         toggle.classList.toggle('night')
+    }
 }
 
 toggle.addEventListener('change', (event) => {

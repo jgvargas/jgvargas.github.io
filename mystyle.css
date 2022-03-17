@@ -22,7 +22,7 @@
     --color-white-20: #eaedef;
     --color-blue-20: #003496;
 
-    --bg-color: #E7ECEF;
+    --bg-color: #dee1e2;
     --btn-hover: #6d60fa;
     --btn-primary: #4837ff;
     --nav-bg: #297373;
@@ -31,7 +31,7 @@
     --page-title: #161b33;
     --page-pretitle: #6d60fa;
     --section-text: #639FAB;
-    --card-bg: #eaedef;
+    --card-bg: #E7ECEF;
     --link-bg: #6d60fa;
     --link-hover: #6d60fa;
 }
@@ -395,6 +395,10 @@ section {
     padding: 40% 0;
 }
 
+.skills-list {
+    justify-content: space-around;
+}
+
 @media (max-width:960px) {
 
     #about .card {
@@ -407,7 +411,9 @@ section {
     }
 }
 
-
+.about-img {
+    
+}
 
 footer {
     background: var(--nav-bg);
