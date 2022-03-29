@@ -447,6 +447,10 @@ nav span {
     left: -5%;
 }
 
+.card-secondary .tech-icons {
+    text-align: right;
+}
+
 @media (max-width: 900px) {
     .card-secondary {
         flex-direction: column-reverse;
@@ -462,7 +466,7 @@ nav span {
 }
 
 #projects i {
-    color: var(--bg-nav);
+    color: var(--nav-links);
     transition-duration: 300ms;
     transition-property: color, transform;
 }
@@ -505,6 +509,7 @@ figure {
     border: 1px solid red;
 }
 
+/* Animations */
 .reveal {
     position: relative;
     transform: translateY(100px);
@@ -548,7 +553,7 @@ footer {
 }
 
 footer p {
-    color: var(--bg-color);
+    color: var(--page-text-secondary);
     font-size: 1.25rem;
     font-weight: 400;
     padding: 1rem;
