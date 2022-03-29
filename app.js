@@ -1,36 +1,77 @@
-const menu = document.querySelector('#mobile-menu')
-const menuLinks = document.querySelector('.nav-menu')
-const toggle = document.querySelector('.toggle')
-let storedTheme = localStorage.getItem("userTheme")
+/*---------------------------------------------------------------------------------------
+    TODO:
+    - bug with checkbox, sometimes themes are not matching with checkbox state
+---------------------------------------------------------------------------------------*/
 
-// Theme logic
-function loadTheme() {
-    console.log("Hello")
-}
+/*--------------------
+    Declarations
+--------------------*/
 
-if(storedTheme) {
-    console.log(`The stored theme is ${storedTheme}`)
-    document.documentElement.setAttribute('data-theme', storedTheme)
-    if(storedTheme === 'dark') {
-        toggle.classList.toggle('night')
-    }
-}
+/*--------------------
+    Mobile menu logic
+--------------------*/
 
-toggle.addEventListener('change', (event) => {
-    toggle.classList.toggle('night')
-    let theme = 'light'
-    storedTheme = document.documentElement.getAttribute('data-theme')
-    
-    if(storedTheme === "light" || storedTheme === null) {
-        theme = 'dark'
-    }
-    localStorage.setItem('userTheme', theme)
-    document.documentElement.setAttribute('data-theme', theme)
-})
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.nav-menu');
 
-// Mobile menu
+// Toggle mobile menu
 menu.addEventListener('click', () => {
-    menu.classList.toggle('is-active');
+    menu.classList.toggle('active');
     menuLinks.classList.toggle('active');
 });
 
+document.querySelectorAll(".nav-item").forEach( item => item.addEventListener( 'click', () => {
+    menu.classList.remove('active')
+    menuLinks.classList.remove('active')
+}))
+
+/*--------------------
+    Scroll animations
+--------------------*/
+
+window.addEventListener('scroll', reveal)
+let reveals = document.querySelectorAll('.reveal')
+
+function reveal() {
+    
+    for(let i = 0; i< reveals.length; i++) {
+        let windowheight = window.innerHeight;
+        let revealTop = reveals[i].getBoundingClientRect().top;
+        var revealPoint = 50;
+
+        if( revealTop < windowheight - revealPoint) {
+            reveals[i].classList.add('active')
+        }
+        else {
+            //reveals[i].classList.remove('active')
+        }
+    }
+}
+
+/*--------------------
+    Toggle theme logic
+--------------------*/
+const toggle = document.querySelector('#toggle')
+
+// check if theme preference was set
+let storedTheme = localStorage.getItem('userTheme')
+
+console.log(document.getElementById('toggle').checked)
+
+if (storedTheme === null) {
+    // Default to light theme
+    storedTheme = 'light'
+    localStorage.setItem('userTheme', storedTheme)
+    console.log(document.getElementById('toggle').checked)
+} else {
+    storedTheme = localStorage.getItem('userTheme')
+    document.documentElement.setAttribute('data-theme', storedTheme)
+}
+
+toggle.addEventListener('change', (event) => {
+    storedTheme === 'light' ? storedTheme = 'dark' : storedTheme = 'light'
+    localStorage.setItem('userTheme', storedTheme)
+    document.documentElement.setAttribute('data-theme', storedTheme)
+
+    console.log(document.getElementById('toggle').checked)
+})

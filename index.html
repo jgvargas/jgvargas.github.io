@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Jgvargasjr</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="./mystyle.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
     <!-- Google Font -->
@@ -14,152 +14,224 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
 </head>
-<body onload="loadTheme()">
+<body>
+
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <!-- Logo -->
-            <div id="logo">
-                @Jgvargasjr
-            </div>
-
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-
+    <nav>
+        <div class="container">
+            <h2><span>@</span>Jgvargas</h2>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a class="nav-links active-page" href="#home">Home</a>
+                    <a href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-links active-page" href="#projects">Projects</a>
+                    <a href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-links active-page" href="#about">About</a>
+                    <a href="#about">About</a>
                 </li>
-                
-                <li class="nav-mobile-btn">
-                    <a href="mailto:jgvargasjr@outlook.com" class="button">
-                        Contact
-                    </a>
+                <li class="nav-item">
+                    <a class="contact-button" href="#">Contact</a>
                 </li>
             </ul>
 
+            <!-- Mobile Menu -->
+            <div id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Start screen -->
+    <!--Home-->
     <section id="home">
+
         <div class="container card">
-            <p class="page-pretitle">
-                Hello, my name is Juan
-            </p>
-            <h2 class="page-title">
-                I have fun making websites.
-            </h1>
-            <p class="section-text">
-                I'm a software developer and alumni of the University of Texas at Rio Grande Valley computer science program. Nice to meet you!
-            </p>
-            <div class="toggle text-center">
-                <input type="checkbox" id="toggle">
-                <label for="toggle">
-                    <div class="cloud"></div>
-                </label>
-                
+            <div class="">
+                <h2 class="">Hello, My name is Juan</h2>
+                <h1 class="">I have fun making websites</h1>
+                <p>
+                    I'm a software developer and alumni of the University of Texas at Rio Grande Valley computer science program. Nice to meet you! 
+                </p>
+                <!--Theme Toggle-->
+                <div class="toggle text-center">
+                    <input type="checkbox" id="toggle">
+                    <label for="toggle">
+                        <div class="cloud"></div>
+                    </label>
+                </div>
             </div>
         </div>
-    </section>   
 
-    <!-- Projects section -->
+    </section>
+
+    
+    <!-- Projects -->
     <section id="projects">
-        <div class="container card">
-            <div class="page-title text-center">
-                My recent work
-            </div>
+        <div class="container">
+            
+            <h1 class="text-center">My recent work</h1>
+            <div class="">
 
-            <div class="split">
-                <div class="card-grow">
-                    <div class="project-title text-center">
-                        Animal Adoption site
-                    </div>
-                    <a href="./src/animal-home.html">
-                        <div class="ribbon">Click me</div>
-                        <img class="project-img" src="./img/animal-project-preview.PNG" alt="">
-                    </a>
-                </div>
-                <div class=" card-grow">
-                    <div class="project-title text-center">
-                        Enhanced Bookmarks
-                    </div>
-                    <a href="">
-                        <img src="./img/bookmarks-preview.PNG" alt="" class="project-img">
-                    </a>
+                <!--Project 1-->
+                <div class="project-space card card-primary reveal">
                     
-                </div>
-                <div class="card-grow">
-                    <div class="project-title text-center">
-                        My portfolio page
+                    <div class="project-info main">
+                        <p class="featured">Featured project</p>
+                        <div class="">
+                            <h2 class="project-title">Pet Adoption Site</h2>
+                            <p class="project-details card">
+                                A fictional webpage for an animal adoption website generating animal 
+                                companions with the help of this <a href="https://dog.ceo/dog-api/">Dog API</a>.
+                                This page is responsive and includes a hamburger menu for mobile view.
+                            </p>
+                            <div class="language-bar split">
+                                <p>HTML5</p>
+                                <p>Javascript (ES6)</p>
+                                <p>Responsive design</p>
+                                <p>RESTful API</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-icons split">
+                            <a href="https://github.com/jgvargas/jgvargas.github.io/tree/main/src">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a href="">
-                        <img src="./img/my-portfolio-preview.PNG" alt="" class="project-img">
-                    </a>
-                </div>
-            </div>
 
+                    <div class="side" id="project1">
+                        <figure class="">
+                            <img src="./img/animal-project-preview.PNG" alt="Preview of my Animal Adoption project">
+                            <span class="project-caption">Click to demo</span>
+                        </figure>
+                    </div>
+                </div>
+                
+                <!--Project 2-->
+                <div class="project-space card reveal">
+                    <!--Img-->
+                    <div class="side" id="project2">
+                        <img src="./img/bookmarks-preview.PNG" alt="Preview of my trivia game project">
+                    </div>
+                    
+                    <div class="project-info main card-secondary">
+                        
+                        <div class="">
+                            
+                            <h2 class="project-title">
+                                
+                                Star Wars Trivia
+                            </h2>
+                            <p class="project-details card">
+                                A fictional webpage for an animal adoption website generating animal 
+                                companions with the help of this <a href="https://dog.ceo/dog-api/">Dog API</a>.
+                                This page is responsive and includes a hamburger menu for mobile view.
+                            </p>
+                            <div class="language-bar split">
+                                <p>HTML5</p>
+                                <p>Javascript (ES6)</p>
+                                <p>Responsive design</p>
+                                <p>RESTful API</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-icons split">
+                            <a href="https://github.com/jgvargas/jgvargas.github.io/tree/main/src">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!--Project 3-->
+                <div class="project-space card reveal">
+                    <div class="project-info main">
+
+                        <div class="">
+                            <h2 class="project-title">Portfolio page</h2>
+                            <p class="project-details card">
+                                In order to showcase my work I created this page with no extra libraries, only HTML, CSS, and Javascipt.
+                                This page is responsive and includes a hamburger menu for mobile view. 
+                            </p>
+                            <div class="language-bar split">
+                                <p>HTML5</p>
+                                <p>Javascript (ES6)</p>
+                                <p>Responsive design</p>
+                                <p>RESTful API</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-icons split">
+                            <a href="https://github.com/jgvargas/jgvargas.github.io/tree/main/src">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="side" id="project3">
+                        <img src="./img/my-portfolio-preview.PNG" alt="Preview of my Animal Adoption project">
+                    </div>
+                </div>
+
+            </div>
         </div>
+        
     </section>
 
-    <!-- About section-->
+    <!-- About -->
     <section id="about">
-        <div class="container flex-col">
-            <div class="card">
-                <h1 class="page-title text-center">
-                    A few things about me
-                </h1>
-                <div class="split">
-                    <div class="align-section">
-                        <p class="section-text">
-                            👋 I'm Juan Vargas Jr. I'm an experieced engineer that has a fascination with Front-end technologies
-                            like React, HTML5, ES6,CSS. My goal is to branch out into the backend as well and have some projects in the works
-                            to showcase my work.
-                        </p>
-                    </div>
-
-                    <div class="">
-                        <img src="./img/my_picture.jpg" alt="picture of me" class="about-img">
-                    </div>
+        <div class="container card">
+            <div class="split">
+                <div>
+                    <img src="./img/my_avi.jpg" alt="a picture of me">    
                 </div>
-                <h2 class="project-title text-center">Skills</h2>
-                <div class="split skills-list">
-                    <i class="fab fa-js-square fa-3x"></i>
-                    <i class="fab fa-html5 fa-3x"></i>
-                    <i class="fab fa-css3-alt fa-3x"></i>
-                    <i class="fab fa-python fa-3x"></i>
-                    <i class="fab fa-react fa-3x"></i>
-                    <i class="fab fa-java fa-3x"></i>
+                <div>
+                    <h1 class="text-center">A few things about me</h1>
+                    <p>
+                        I'm Juan Vargas Jr. I'm an experieced engineer with a fascination with 
+                        Front-end technologies like React, HTML5, ES6,CSS3. Say hello and reach out to me if you have any questions 👋
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!--Footer-->
     <footer>
-        <div class="text-center container">
-            <div>
-                <a target="_blank" href="https://www.linkedin.com/in/john-vargas-b68168215/">
-                    <i class="fab fa-linkedin-in fa-lg"></i>
-                </a>
-                <a target="_blank" href="https://github.com/jgvargas">
-                    <i class="fab fa-github fa-lg"></i>
-                </a>
-            </div>
+        <div class="container">
             <p>
                 Thank you for checking out my page!
             </p>
+            <div class="end-message">
+
+                <a class="contact-button" href="#">Contact</a>
+
+                <div class="contact-links">
+                    <a target="_blank" href="https://www.linkedin.com/in/john-vargas-b68168215/">
+                        <i class="fab fa-linkedin-in fa-lg"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/jgvargas">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <script src="/app.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>
