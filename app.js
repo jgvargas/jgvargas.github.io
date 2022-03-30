@@ -6,15 +6,14 @@
 /*--------------------
     Declarations
 --------------------*/
-
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.nav-menu');
+let reveals = document.querySelectorAll('.reveal')
+const toggle = document.querySelector('#toggle')
+let storedTheme = localStorage.getItem('userTheme')
 /*--------------------
     Mobile menu logic
 --------------------*/
-
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.nav-menu');
-
-// Toggle mobile menu
 menu.addEventListener('click', () => {
     menu.classList.toggle('active');
     menuLinks.classList.toggle('active');
@@ -28,12 +27,9 @@ document.querySelectorAll(".nav-item").forEach( item => item.addEventListener( '
 /*--------------------
     Scroll animations
 --------------------*/
-
 window.addEventListener('scroll', reveal)
-let reveals = document.querySelectorAll('.reveal')
 
 function reveal() {
-    
     for(let i = 0; i< reveals.length; i++) {
         let windowheight = window.innerHeight;
         let revealTop = reveals[i].getBoundingClientRect().top;
@@ -47,15 +43,9 @@ function reveal() {
         }
     }
 }
-
 /*--------------------
     Toggle theme logic
 --------------------*/
-const toggle = document.querySelector('#toggle')
-
-// check if theme preference was set
-let storedTheme = localStorage.getItem('userTheme')
-
 console.log(document.getElementById('toggle').checked)
 
 if (storedTheme === null) {
