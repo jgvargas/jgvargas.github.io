@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="animal.css">
+    <link rel="stylesheet" href="animal-test.css">
+    <script defer src="./animal-adopt.js"></script>
 </head>
-<body onload="renderAdoptPage()">
+<body onload="loadPage()">
     <!-- Navbar -->
     <nav>
-        <div class="nav-container container">
+        <div class="container">
             <h1 class="nav-logo" style="font-size: 1.15em;">
                 <a href="../index.html">
                     Animal <i class="fas fa-heart logo-heart"></i>
@@ -47,44 +48,40 @@
     </nav>
 
     <!-- Site banner -->
-    <div class="banner--adopt">
-        <h1 class="banner-text--adopt">Find your best friend with us!</h1>
-    </div>
+    <section class="banner banner-adopt">
+        <h1>Find your best friend with us!</h1>
+    </section>
 
-    <!-- Site body -->
-    <div class="container split">    
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <h3 class="sidebar-header"  onclick="renderAdoptPage()">
-                All Breeds
-            </h3>
-            <input id="sidebar-input" onkeyup="filterBreedList()" type="text" placeholder="Search">
-            <ul class="pet-selection">
-                <!-- JS populated -->
-            </ul>
-        </div>
-        
-        <!-- Sidebar mobile button -->
-        <button id="sidebar-button">Filters</button>
-        <div id="sidebar-mobileview">
-            <h3 class="sidebar-header">
-            All Breeds
-            </h3>
-            <input id="sidebar-input" type="text" placeholder="Search by breed">
-            <ul class="pet-selection">
-            </ul>
-        </div>
-
-        <!-- Adoption content -->
-        <div class="pet-space">
-            <div class="pet-box">
-                <img class="pet-img" alt="friendly-dog">
-                <div class="pet-info">About me: </div>
+    <!--Main Content-->
+    <section class="main-content container">
+        <!--Sidebar-->
+        <section class="sidebar">
+            <div class="container ">
+                <h2>All Breeds</h2>
+                <input placeholder="search" type="Search" class="search-bar">
+                <ul class="breed-list">
+                    <!--
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    -->
+                </ul>
             </div>
-        </div>
-        
-    </div>
+        </section>
+        <!--Main-->
+        <section id="adoption-content" class="main border">
+            <!--
+                <div class="pet-box">
+                    <img class="pet-img" src="${pet.imgSrc}" alt="Dog">
+                    <div class="pet-details">
+                        <p>
+                            <span class="pet-name">${pet.name}</span>
+                        </p>
+                    </div>   
+                </div>
+            -->
+        </section>
+    </section>
 
     <!-- Footer -->
     <footer class="footer drk-blue-theme">
@@ -118,6 +115,5 @@
             2020-2021 Copyright Animal Adoption, Inc. All rights NOT reserved.
         </p>
     </footer>
-    <script src="./animal-adopt.js"></script>
 </body>
 </html>

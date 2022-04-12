@@ -8,129 +8,125 @@
         - Age should not be 0
 */
 
-// Adopt dependencies
-const petSpace = document.querySelector(".pet-space");
-const sideBarList = document.querySelector(".pet-selection");
-const randomImageApiUrl = "https://dog.ceo/api/breeds/image/random";
+/*------------------------------------------
+    Pet Adoption
 
-// Dynamic html selection 
-function getDogBreedImages( breedName) {
-    let dogImagesUrl = `https://dog.ceo/api/breed/${breedName}/images`;
-    fetch(dogImagesUrl)
-    .then( (response) => {
-        return response.json();
-    })
-    .then( (json) => {
-        createSpecificBreedHtml(json, breedName);
-    })
-    .catch( (error) => {
-        console.log(error);
-    });
+    Create pets
+    -> allPets[] contains all adoption data
+    -> getDogData() starts creation of pet objects
+
+    Create breed list
+    -> 
+------------------------------------------*/
+let breedList = document.querySelector(".breed-list")
+const petSpace = document.querySelector(".main")
+let amount = 9
+const allBreedsUrl = `https://dog.ceo/api/breeds/list/all`
+const url = `https://dog.ceo/api/breeds/image/random/${amount}`
+let allPets = []
+let data = ''
+
+function loadPage() {
+    //Creates sidebar
+    getDogData(allBreedsUrl, "side")
+    //Creates adoption page
+    getDogData(url, "main")
+    console.log(allPets)
 }
 
-function createSpecificBreedHtml(json, breedName) {
-    let imageList = json.message;
-    let name;
-    let petSpaceHTML = ""
-    
-    petSpace.innerHTML ="";
+async function getDogData(url = '', content = 'main') {
+    const res = await fetch(url)
 
-    imageList.forEach( imageSrc => {
-        let gender = ( Math.round (Math.random() ) ? "Female" : "Male"  );
-        if (gender == "Male")
-            name = getName(true);
-        else 
-            name = getName(false);
-        let age = createAge();
-
-        petSpaceHTML += 
-        `<div class="pet-box">
-            <img src="${imageSrc}" class="pet-img" alt="friendly-dog">
-            <div class="pet-info"><h3>${name} | ${ gender }</h3>
-            <p> ${age} ${capitalizeFirstLetter( breedName )}</p> 
-            </div>
-        </div>`;
-    })
-
-    petSpace.innerHTML = petSpaceHTML;
-}
-
-sideBarList.addEventListener('click', event => {
-    if(event.target && event.target.nodeName == "LI") {
-        // Refresh images
-        getDogBreedImages(event.target.innerHTML.trim());
+    if(!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
     }
-})
+    data = await res.json()
+    
+    content === 'main' ? 
+        createPetInfo(data.message) :
+        createSideBar(data.message)
+}
 
-// Filter Breed List
-function filterBreedList() {
-    let breedList = document.querySelector(".pet-selection");
-    let listOfBreeds = breedList.getElementsByTagName("LI");
-    let userInput = document.getElementById("sidebar-input");
-    let Input = userInput.value.toLowerCase();
+// Sidebar ////////////////////////////////////////
+function createSideBar(breedList) {
+    breedName1 = Object.keys(breedList)
+    breedName2 = Object.values(breedList)
 
-    for( let i = 0; i < listOfBreeds.length ; i++ ) {
-        let breed = listOfBreeds[i].innerHTML;
-
-        if ( breed.toLowerCase().indexOf(Input) > -1 ) {
-            listOfBreeds[i].style.display = "";
+    
+    //console.log(...breedName1, ...breedName2)
+    for (let i = 0; i < breedName2.length ; i++) {
+        if(breedName2[i].length !== 0) {
+            console.log(breedName2[i], breedName1[i])
         }
         else {
-            listOfBreeds[i].style.display = "none";
+            createLiElement(breedName1[i])
         }
     }
 }
-// END
 
-
-// SIDEBAR CREATION
-function createSidebar(breedList) {
-    sideBarList.innerHTML = '';
-    let sideBarListHTML = '';
-
-    breedList.forEach( breed => {
-        let sideBarHTML = `<li class="sidebar-li">${breed}</li>`;
-        sideBarListHTML += sideBarHTML;
-    })
-    sideBarList.innerHTML = sideBarListHTML;
+function createLiElement(breedName) {
+    let capWord = breedName.charAt(0).toUpperCase() 
+        + breedName.slice(1)
+    
+    const newLi = `
+    <li>
+        <a href="#">${capWord}</a>
+    </li>`
+    breedList.innerHTML += newLi
 }
 
-function createDogBreedList() {
-    const allBreedsApiUrl = "https://dog.ceo/api/breeds/list/all";
+// Main adoption ///////////////////////////////////
+function createPetInfo( dogImgArr) {
+    for( let i = 0 ; i < dogImgArr.length; i++) {
 
-    fetch(allBreedsApiUrl)
-    .then( (response) => {
-        return response.json();
-    })
-    .then( (json) => {
-        createSidebar(Object.keys(json.message) );
-    })
-    .catch( (error) => {
-        console.log(error);
-    });
+        let petGender = getGender()
+        let petName = getName(petGender)
+        let petAge = getAge()
+        let petImg = dogImgArr[i]
+        let petBreed = getBreed(dogImgArr[i])
+
+        let newPet = {
+            imgSrc: petImg,
+            name: petName,
+            gender: petGender,
+            age: petAge,
+            breed: petBreed
+        }
+        allPets.push(newPet)     
+        createPetBox(newPet)
+    }
 }
 
-// INIT page settings
-function createRandomPet() {
-    return fetch(randomImageApiUrl)
-        .then( (response) => {
-            return response.json();
-        })
-        .then( (json) => {
-            createPetSpace(json);
-        })
-        .catch( (error) => {
-            console.log(error);
-        });
+function createPetBox(pet) {
+    let petBox = `
+    <div class="pet-box">
+        <img class="pet-img" src="${pet.imgSrc}" alt="Dog">
+        <div class="pet-details">
+            <p>
+                <span class="pet-name">${pet.name}</span>
+            </p>
+        </div>   
+    </div>
+    `
+    petSpace.innerHTML += petBox
 }
 
-function createAge() {
-    let years = Math.ceil( Math.random() * 12);
-    let ageStatement = years + " year old"; 
-    return ageStatement;
+function getAge() {
+    return Math.floor(Math.random() * (17 - 1 + 1) + 1 )
 }
 
-function getName(gender) {
+function getBreed(petString) {
+    // Parse img src string for breed
+    const stringTokens = petString.split('/')
+    return stringTokens[4]
+}
+
+function getGender() {
+    return Math.floor(Math.random() * 2) ===1 ?
+     "male" : "female"
+}
+
+function getName( gender) {
     let female = [
         "Bella",
         "Lucy",
@@ -337,70 +333,10 @@ function getName(gender) {
         "Walter"
     ];
 
-    if(gender){
-        return male[ Math.floor( Math.random() * (male.length) + 1) ]; 
-    }
-    else {
-        return female[ Math.floor( Math.random() * (male.length) + 1) ]; 
-    }
-}
-
-function capitalizeFirstLetter(string) {
-    return string[0].toUpperCase() + string.slice(1);
-}
-
-function getBreedName(imgURL) {
-    let urlSplit = imgURL.split("/");
-    let breedName = "";
-
-    if (urlSplit[4].indexOf("-") != -1) {
-        let multiWord = urlSplit[4].split("-");
-        breedName = capitalizeFirstLetter( multiWord[1] ) + " " + capitalizeFirstLetter( multiWord[0] );
-        return breedName;
-    }
-    else {
-        breedName = urlSplit[4]
-        return capitalizeFirstLetter( breedName );
-    }
-}
-
-function createPetSpace (json) {
-    let randImg = json.message;
-    let name;
-    let gender = ( Math.round (Math.random() ) ? "Female" : "Male"  );
-    if (gender == "Male")
-        name = getName(true);
-    else 
-        name = getName(false);
-    let age = createAge();
-    let breed = getBreedName(randImg);
-
-    petSpace.innerHTML += 
-    `<div class="pet-box">
-        <img src="${randImg}" class="pet-img" alt="friendly-dog">
-        <div class="pet-info"><h3>${name} | ${ gender }</h3>
-        <p>${age} ${breed}</p> 
-        </div>
-    </div>`;
-}
-
-function renderAdoptPage() {
-    // Gets breeds then populate sidebar
-    createDogBreedList();
-
-    // Create pet-space
-    petSpace.innerHTML = '';
-    for(let i =0; i< 30; i++) {
-        createRandomPet();
-    }
-    // Promise.all( imgArray.map( () => {
-    //     fetch(randomImageApiUrl)
-    //     .then( json => {
-    //         createPetSpace(json.message)
-    //     })
-    //     petSpace.innerHTML += petSpaceHTML;
-    //     console.log("Finished after fetch")
-    // }))
+    return gender ==="male" ? 
+        male[Math.floor(Math.random() * male.length)]
+        : 
+        female[Math.floor(Math.random() * female.length)]
 }
 
 /*----------------------------------------------------- 

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="./animal.css">
+    <script defer src="./animal.js"></script>
     <title>Support AAC</title>
 </head>
 <body>
@@ -50,19 +51,22 @@
         <!--Top Banner -->
         <section class="default-theme banner support-banner">
             <div class="container">
-                <h2 class="banner-heading">
-                    Monthly Donations
-                </h2>
-                <p class="banner-text">
-                    Your monthly contribution means the world to us
-                    and supports homeless pets around our community.
-                </p>
-                <button class="btn primary-btn">Donate</button>
+                <div class="banner-info border1">
+                    <h2 class="banner-heading">
+                        Monthly Donations
+                    </h2>
+                    <p class="banner-text">
+                        Your monthly contribution means the world to us
+                        and supports homeless pets around our community.
+                    </p>
+                </div>
+                
+                <button id="donate-btn" class="btn primary-btn">Donate</button>
             </div>
             
         </section>
         <!-- Second strip -->
-        <section class="default-theme">
+        <section class="support-section default-theme">
             <div class="container">
                 <h2 class="section-heading text-center">
                     Animal Adoption Center is powered by our community
@@ -79,7 +83,7 @@
         </section>   
         
         <!-- Third strip-->
-        <section class="gry-theme">
+        <section class="support-section gry-theme">
             <div class="container">
                 <h2 class="section-heading text-center">
                     Volunteers are the heart of our program
@@ -102,7 +106,7 @@
         </section>
             
         <!-- Last Strip -->
-        <section class="lgt-blue-theme">
+        <section class="support-section lgt-blue-theme">
             <div class="container">
                 <h2 class="section-heading text-center">
                     Your Donations go a long way
@@ -209,7 +213,5 @@
             2020-2021 Copyright Animal Adoption, Inc. All rights NOT reserved.
         </p>
     </footer>
-
-    <script src="./animal.js"></script>
 </body>
 </html>
