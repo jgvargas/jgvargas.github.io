@@ -133,7 +133,7 @@ p {
     color: var(--page-text);
 }
 
-@media (min-width: 600px) {
+@media (max-width: 800px) {
     h1 {
         font-size: 2.5rem;
     }
@@ -466,7 +466,8 @@ figure {
     }
 
     #about img {
-        width: 60%;
+        width: 85%;
+        border-radius: 10px;
     }
 }
 
