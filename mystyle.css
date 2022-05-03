@@ -134,7 +134,14 @@ p {
 }
 
 @media (min-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
 
+    h2 {
+        font-size: 1.5rem;
+    }
+    p { font-size: 1rem;}
 }
 /*--------------
     Home
@@ -351,12 +358,6 @@ p {
     text-align: right;
 }
 
-@media (max-width: 900px) {
-    .card-secondary {
-        flex-direction: column-reverse;
-    }
-}
-
 .main { flex: 1 1 60%;}
 
 .side { flex: 1 1 40%;}
@@ -421,6 +422,15 @@ figure {
     opacity: 1;
 }
 
+@media (max-width: 900px) {
+    .card-secondary {
+        flex-direction: column-reverse;
+    }
+    .project-space {
+        width: 100%;
+    }
+}
+
 /*-----------------
     About
 -----------------*/
@@ -448,6 +458,15 @@ figure {
     .card-secondary {
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    #about .split {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #about img {
+        width: 60%;
     }
 }
 
