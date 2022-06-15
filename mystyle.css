@@ -287,7 +287,7 @@ p {
 }
 
 .box div:nth-child(1) {
-    top: 12%;
+    top: 0;
     left: 42%;
     animation: animate 10s linear infinite;
 }
@@ -357,7 +357,8 @@ p {
     padding: .25rem .5rem;
     color: #fff;
     font-weight: 500;
-
+    width: 300px;
+    height: 2rem;
     position: relative;
     left: -10%;
     top: -6%;
@@ -389,12 +390,11 @@ p {
 
 .project-space {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 4rem auto;
     width: 80%;
     max-width: 800px;
-
-    position: relative;
+    position: absolute;
 }
 
 @media (max-width: 900px) {
@@ -406,7 +406,7 @@ p {
 .project-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .project-title {

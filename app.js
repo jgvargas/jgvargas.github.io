@@ -39,7 +39,7 @@ function reveal() {
             reveals[i].classList.add('active')
         }
         else {
-            //reveals[i].classList.remove('active')
+            reveals[i].classList.remove('active')
         }
     }
 }
