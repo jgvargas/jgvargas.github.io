@@ -525,6 +525,16 @@ figure {
         display: flex;
         flex-direction: column;
     }
+    .key-phrases {
+        display: flex;
+        flex-direction: column;
+    }
+    .card-secondary .key-phrases{
+        margin-left: 0;
+    }
+    .tech-icons {
+        margin-bottom: 1rem;
+    }
 }
 
 /*-----------------
@@ -536,7 +546,7 @@ figure {
 }
 
 #about h1 {
-    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 #about p {
