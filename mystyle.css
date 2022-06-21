@@ -338,7 +338,6 @@ p {
                 -> .project-title
                 -> .project-details
                 -> .lanuage-bar
-                -> .icons
             -> .project-*
                 -> img
 ----------------------------------*/
@@ -509,7 +508,7 @@ figure {
     position: relative;
     transform: translateY(100px);
     opacity: 0;
-    transition: transform 500ms ease;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
 }
 
 .reveal.active {
@@ -547,6 +546,11 @@ figure {
 
 #about h1 {
     margin-bottom: 1rem;
+    color: var(--page-text-secondary);
+}
+
+#about h2 {
+    color: var(--links);
 }
 
 #about p {
@@ -561,6 +565,21 @@ figure {
 .img-space {
     max-width: 500px;
     padding: 1rem 3rem 3rem 1rem;
+}
+
+.about-text {
+    line-height:2.5rem !important;
+}
+
+#about .key-phrases {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#about .key-phrases li {
+    color: var(--page-text);
+    font-size: 1.5rem;
+    margin-bottom: .25rem;
 }
 
 .about-img::before {
@@ -744,6 +763,7 @@ footer .contact-links {
 }
 
 .contact-links a {
+    margin-top: 1rem;
     color: var(--page-title);
     padding: .75rem;
     transition-duration: 500ms;
